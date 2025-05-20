@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ACK St.Faith's Church</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  />
+  <!-- AOS Animation CSS -->
+<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+  <style>
+   
+
+    nav ul li button:hover i,
+    nav ul li button:focus i {
+      animation: bounce-caret 0.4s ease forwards;
+    }
+
+    /* Hamburger icon animation */
+    #menu-toggle svg path {
+      transition: stroke-dasharray 0.4s ease, stroke-dashoffset 0.4s ease;
+      stroke-dasharray: 60 207;
+      stroke-dashoffset: 0;
+    }
+    #menu-toggle.open svg path {
+      stroke-dasharray: 90 207;
+      stroke-dashoffset: -134;
+      transition: stroke-dasharray 0.4s ease, stroke-dashoffset 0.4s ease;
+    }
+    /* Submenu smooth fade */
+    nav ul li ul {
+      transition: opacity 0.3s ease, visibility 0.3s ease;
+      opacity: 0;
+      visibility: hidden;
+    }
+    nav ul li:hover > ul,
+    nav ul li:focus-within > ul {
+      opacity: 1;
+      visibility: visible;
+    }
+  </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+  <!-- Header -->
+  <header class="bg-white shadow sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 py-6 flex justify-between items-center">
+      <!-- Logo + Text container -->
+      <a href="index.html" class="flex items-center space-x-3">
+        <img src="Images/logo.png" alt="PCEA Evergreen Logo" class="h-10 w-auto sm:h-12 md:h-14" />
+        <span class="text-2xl font-bold text-red-800 hidden sm:inline-block">ACK St. Faith's Church</span>
+      </a>
+
+      <!-- Mobile menu button -->
+      <div class="md:hidden">
+        <button id="menu-toggle" aria-label="Toggle menu" class="text-green-700 focus:outline-none">
+          <svg class="w-6 h-6 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Desktop nav -->
+      <nav class="hidden md:block">
+        <ul class="flex space-x-6 text-sm font-semibold">
+          <li class="group relative">
+            <a href="#" class="hover:text-green-700 transition-colors duration-300">Home</a>
+          </li>
+          <li class="group relative">
+            <button class="hover:text-green-700 flex items-center gap-1 transition-colors duration-300" aria-haspopup="true" aria-expanded="false">
+              About
+              <i class="fas fa-caret-down transition-transform duration-300 group-hover:rotate-180 inline-block"></i>
+            </button>
+            <ul
+              class="absolute left-0 top-full mt-2 space-y-2 w-40 rounded border border-gray-200 bg-white p-2 shadow opacity-0 invisible group-hover:opacity-100 group-hover:visible"
+              tabindex="-1"
+            >
+              <li><a href="about.html" class="block px-2 py-1 hover:bg-gray-100 rounded transition-colors duration-300">History</a></li>
+              <li><a href="#" class="block px-2 py-1 hover:bg-gray-100 rounded transition-colors duration-300">Leadership and Clergy</a></li>
+            </ul>
+          </li>
+          <li class="group relative">
+            <button class="hover:text-green-700 flex items-center gap-1 transition-colors duration-300" aria-haspopup="true" aria-expanded="false">
+              Ministries
+              <i class="fas fa-caret-down transition-transform duration-300 group-hover:rotate-180 inline-block"></i>
+            </button>
+            <ul
+              class="absolute left-0 top-full mt-2 space-y-2 w-40 rounded border border-gray-200 bg-white p-2 shadow opacity-0 invisible group-hover:opacity-100 group-hover:visible"
+              tabindex="-1"
+            >
+              <li><a href="#" class="block px-2 py-1 hover:bg-gray-100 rounded transition-colors duration-300">Children and Teens</a></li>
+              <li><a href="#" class="block px-2 py-1 hover:bg-gray-100 rounded transition-colors duration-300">KAYO</a></li>
+              <li><a href="#" class="block px-2 py-1 hover:bg-gray-100 rounded transition-colors duration-300">Choir and Worship Team</a></li>
+              <li><a href="#" class="block px-2 py-1 hover:bg-gray-100 rounded transition-colors duration-300">Mission Team</a></li>
+              <li><a href="#" class="block px-2 py-1 hover:bg-gray-100 rounded transition-colors duration-300">KAMA</a></li>
+              <li><a href="#" class="block px-2 py-1 hover:bg-gray-100 rounded transition-colors duration-300">Mother's Union</a></li>
+            </ul>
+          </li>
+          <li class="group relative">
+            <button class="hover:text-green-700 flex items-center gap-1 transition-colors duration-300" aria-haspopup="true" aria-expanded="false">
+              Get Involved
+              <i class="fas fa-caret-down transition-transform duration-300 group-hover:rotate-180 inline-block"></i>
+            </button>
+            <ul
+              class="absolute left-0 top-full mt-2 space-y-2 w-40 rounded border border-gray-200 bg-white p-2 shadow opacity-0 invisible group-hover:opacity-100 group-hover:visible"
+              tabindex="-1"
+            >
+              <li><a href="#" class="block px-2 py-1 hover:bg-gray-100 rounded transition-colors duration-300">Give</a></li>
+              <li><a href="#" class="block px-2 py-1 hover:bg-gray-100 rounded transition-colors duration-300">Become a Member</a></li>
+              <li><a href="#" class="block px-2 py-1 hover:bg-gray-100 rounded transition-colors duration-300">Join a Ministry</a></li>
+              <li><a href="#" class="block px-2 py-1 hover:bg-gray-100 rounded transition-colors duration-300">Career Opportunities</a></li>
+            </ul>
+          </li>
+          <li><a href="#" class="hover:text-green-700 transition-colors duration-300">Liturgy</a></li>
+          <li><a href="#" class="hover:text-green-700 transition-colors duration-300">Hymns</a></li>
+          <li><a href="#" class="hover:text-green-700 transition-colors duration-300">Contacts</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="md:hidden hidden px-4 pb-4 space-y-4 transition-all duration-300 ease-in-out">
+      <ul class="space-y-2 text-sm font-semibold">
+        <li><a href="#" class="block hover:text-green-700 transition-colors duration-300">Home</a></li>
+        <li>
+          <button
+            class="w-full text-left flex justify-between items-center hover:text-green-700 transition-colors duration-300"
+            onclick="toggleDropdown('about-dropdown', this)"
+            aria-expanded="false"
+            aria-controls="about-dropdown"
+          >
+            About
+            <i class="fas fa-caret-down inline-block transition-transform duration-300" aria-hidden="true"></i>
+          </button>
+          <ul id="about-dropdown" class="hidden pl-4 space-y-1 transition-all duration-300 ease-in-out" role="region" aria-label="About submenu">
+            <li><a href="#" class="block hover:text-green-700 transition-colors duration-300">History</a></li>
+            <li><a href="#" class="block hover:text-green-700 transition-colors duration-300">Officials</a></li>
+          </ul>
+        </li>
+        <li>
+          <button
+            class="w-full text-left flex justify-between items-center hover:text-green-700 transition-colors duration-300"
+            onclick="toggleDropdown('ministries-dropdown', this)"
+            aria-expanded="false"
+            aria-controls="ministries-dropdown"
+          >
+            Ministries
+            <i class="fas fa-caret-down inline-block transition-transform duration-300" aria-hidden="true"></i>
+          </button>
+          <ul id="ministries-dropdown" class="hidden pl-4 space-y-1 transition-all duration-300 ease-in-out" role="region" aria-label="Ministries submenu">
+            <li><a href="#" class="block hover:text-green-700 transition-colors duration-300">Children and Teens</a></li>
+            <li><a href="#" class="block hover:text-green-700 transition-colors duration-300">KAYO</a></li>
+            <li><a href="#" class="block hover:text-green-700 transition-colors duration-300">Choir and Worship Team</a></li>
+            <li><a href="#" class="block hover:text-green-700 transition-colors duration-300">Mission Team</a></li>
+            <li><a href="#" class="block hover:text-green-700 transition-colors duration-300">KAMA</a></li>
+            <li><a href="#" class="block hover:text-green-700 transition-colors duration-300">Mother's Union</a></li>
+          </ul>
+        </li>
+        <li>
+          <button
+            class="w-full text-left flex justify-between items-center hover:text-green-700 transition-colors duration-300"
+            onclick="toggleDropdown('getinvolved-dropdown', this)"
+            aria-expanded="false"
+            aria-controls="getinvolved-dropdown"
+          >
+            Get Involved
+            <i class="fas fa-caret-down inline-block transition-transform duration-300" aria-hidden="true"></i>
+          </button>
+          <ul id="getinvolved-dropdown" class="hidden pl-4 space-y-1 transition-all duration-300 ease-in-out" role="region" aria-label="Get Involved submenu">
+            <li><a href="#" class="block hover:text-green-700 transition-colors duration-300">Give</a></li>
+            <li><a href="#" class="block hover:text-green-700 transition-colors duration-300">Become a Member</a></li>
+            <li><a href="#" class="block hover:text-green-700 transition-colors duration-300">Join a Ministry</a></li>
+            <li><a href="#" class="block hover:text-green-700 transition-colors duration-300">Career Opportunities</a></li>
+          </ul>
+        </li>
+        <li><a href="#" class="block hover:text-green-700 transition-colors duration-300">Liturgy</a></li>
+        <li><a href="#" class="block hover:text-green-700 transition-colors duration-300">Hymns</a></li>
+        <li><a href="#" class="block hover:text-green-700 transition-colors duration-300">Contacts</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <script>
+    // Toggle mobile menu
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    menuToggle.addEventListener('click', () => {
+      menuToggle.classList.toggle('open');
+
+      // Add bounce animation
+      menuToggle.classList.add('bounce');
+      setTimeout(() => menuToggle.classList.remove('bounce'), 400);
+
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // Toggle dropdowns on mobile submenu
+    function toggleDropdown(id, btn) {
+      const submenu = document.getElementById(id);
+      const isHidden = submenu.classList.contains('hidden');
+      if (isHidden) {
+        submenu.classList.remove('hidden');
+        btn.setAttribute('aria-expanded', 'true');
+        btn.querySelector('i').classList.add('rotate-180');
+      } else {
+        submenu.classList.add('hidden');
+        btn.setAttribute('aria-expanded', 'false');
+        btn.querySelector('i').classList.remove('rotate-180');
+      }
+    }
+  </script>
+
+<section class="py-12 px-4 md:px-16 bg-gray-50">
+  <div class="text-center mb-12">
+    <h2 class="text-4xl font-bold text-maroon-700">Our Ministry Team</h2>
+    <p class="text-gray-600 mt-2">Meet the dedicated team serving at ACK St. Faith’s Church.</p>
+  </div>
+
+  <!-- Clergy Team -->
+  <div class="mb-12">
+    <h3 class="text-2xl font-semibold text-maroon-700 mb-6">Clergy Team</h3>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mt-6">
+
+      <!-- Rev. John Doe -->
+      <div class="bg-white p-4 rounded-xl shadow-md text-center">
+        <img src="/images/rev_john.jpg" alt="Rev. John" class="mx-auto w-32 h-32 object-cover rounded-full mb-4" />
+        <h3 class="text-xl font-bold">Rev. John Doe</h3>
+        <p class="text-sm text-gray-600">Senior Pastor</p>
+        <button onclick="openModal('modal-john')" class="mt-2 text-maroon-700 underline">View Bio</button>
+      </div>
+
+      <!-- Rev. Lucy Wambaa -->
+      <div class="bg-white p-4 rounded-xl shadow-md text-center">
+        <img src="/images/rev_lucy.jpg" alt="Rev. Lucy Wambaa" class="mx-auto w-32 h-32 object-cover rounded-full mb-4" />
+        <h3 class="text-xl font-bold">Rev. Lucy Wambaa</h3>
+        <p class="text-sm text-gray-600">Clergy</p>
+        <button onclick="openModal('modal-lucy')" class="mt-2 text-maroon-700 underline">View Bio</button>
+      </div>
+
+      <!-- Canon Peter Mbugua -->
+      <div class="bg-white p-4 rounded-xl shadow-md text-center">
+        <img src="/images/canon_peter.jpg" alt="Canon Peter Mbugua" class="mx-auto w-32 h-32 object-cover rounded-full mb-4" />
+        <h3 class="text-xl font-bold">Canon Peter Mbugua</h3>
+        <p class="text-sm text-gray-600">Clergy</p>
+        <button onclick="openModal('modal-peter')" class="mt-2 text-maroon-700 underline">View Bio</button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Leadership Team -->
+  <div class="mb-12">
+    <h3 class="text-2xl font-semibold text-maroon-700 mb-6">Leadership Team</h3>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mt-6">
+
+      <!-- Example Leader -->
+      <div class="bg-white p-4 rounded-xl shadow-md text-center">
+        <img src="/images/leader1.jpg" alt="Leader One" class="mx-auto w-32 h-32 object-cover rounded-full mb-4" />
+        <h3 class="text-xl font-bold">Leader One</h3>
+        <p class="text-sm text-gray-600">Church Elder</p>
+        <button onclick="openModal('modal-leader1')" class="mt-2 text-maroon-700 underline">View Bio</button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Modals -->
+  <div id="modal-john" class="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center hidden">
+    <div class="bg-white p-6 rounded-xl max-w-xl">
+      <h2 class="text-2xl font-bold mb-4">Rev. John Doe</h2>
+      <p class="text-gray-700 mb-4">
+        Rev. John Doe has served as the Senior Pastor at ACK St. Faith’s Church since 2010. He is passionate about discipleship and community outreach.
+      </p>
+      <button onclick="closeModal('modal-john')" class="mt-2 px-4 py-2 bg-maroon-700 text-white rounded">Close</button>
+    </div>
+  </div>
+
+  <div id="modal-lucy" class="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center hidden">
+    <div class="bg-white p-6 rounded-xl max-w-xl">
+      <h2 class="text-2xl font-bold mb-4">Rev. Lucy Wambaa</h2>
+      <p class="text-gray-700 mb-4">
+        Rev. Lucy Wambaa serves faithfully at ACK St. Faith’s Church and has been instrumental in pastoral care and church programs. Her ministry focuses on community outreach and mentorship.
+      </p>
+      <button onclick="closeModal('modal-lucy')" class="mt-2 px-4 py-2 bg-maroon-700 text-white rounded">Close</button>
+    </div>
+  </div>
+
+  <div id="modal-peter" class="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center hidden">
+    <div class="bg-white p-6 rounded-xl max-w-xl">
+      <h2 class="text-2xl font-bold mb-4">Canon Peter Mbugua</h2>
+      <p class="text-gray-700 mb-4">
+        Canon Peter Mbugua brings years of wisdom and leadership to ACK St. Faith’s Church. He plays a key role in church governance and spiritual formation.
+      </p>
+      <button onclick="closeModal('modal-peter')" class="mt-2 px-4 py-2 bg-maroon-700 text-white rounded">Close</button>
+    </div>
+  </div>
+
+  <div id="modal-leader1" class="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center hidden">
+    <div class="bg-white p-6 rounded-xl max-w-xl">
+      <h2 class="text-2xl font-bold mb-4">Leader One</h2>
+      <p class="text-gray-700 mb-4">
+        Leader One serves as a dedicated church elder, supporting the church’s strategic direction and helping to guide the congregation in spiritual matters.
+      </p>
+      <button onclick="closeModal('modal-leader1')" class="mt-2 px-4 py-2 bg-maroon-700 text-white rounded">Close</button>
+    </div>
+  </div>
+
+</section>
+
+<script>
+  function openModal(id) {
+    document.getElementById(id).classList.remove('hidden');
+  }
+  function closeModal(id) {
+    document.getElementById(id).classList.add('hidden');
+  }
+</script>
+
+  
+<!-- Footer -->
+<footer class="bg-red-800 text-white mt-16">
+  <div class="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-4 gap-8">
+
+    <!-- Logo & Mission -->
+    <div>
+      <img src="Images/logo.png" alt="Church Logo" class="h-12 mb-4">
+      <p class="text-sm leading-relaxed">
+        ACK St. Faith's Church is committed to spreading the Gospel, building strong Christian families, and serving the community with love and truth.
+      </p>
+    </div>
+
+    <!-- Quick Links -->
+    <div>
+      <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+      <ul class="space-y-2 text-sm">
+        <li><a href="#" class="hover:underline hover:text-red-800 transition">Home</a></li>
+        <li><a href="#" class="hover:underline hover:text-red-800 transition">About Us</a></li>
+        <li><a href="#" class="hover:underline hover:text-red-800 transition">Ministries</a></li>
+        <li><a href="#" class="hover:underline hover:text-red-800 transition">Events</a></li>
+        <li><a href="#" class="hover:underline hover:text-red-800 transition">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- Contact Info -->
+    <div>
+      <h4 class="text-lg font-semibold mb-4">Contact Us</h4>
+      <ul class="space-y-2 text-sm">
+        <li><i class="fas fa-map-marker-alt mr-2 text-green-400"></i> P.O. Box 123, Nairobi, Kenya</li>
+        <li><i class="fas fa-phone mr-2 text-green-400"></i> +254 712 345 678</li>
+        <li><i class="fas fa-envelope mr-2 text-green-400"></i> info@ackstfaith.org</li>
+      </ul>
+    </div>
+
+    <!-- Social Media -->
+    <div>
+      <h4 class="text-lg font-semibold mb-4">Follow Us</h4>
+      <div class="flex space-x-4 text-xl">
+        <a href="#" class="hover:text-red-800 transition"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="hover:text-red-800 transition"><i class="fab fa-twitter"></i></a>
+        <a href="#" class="hover:text-red-800 transition"><i class="fab fa-youtube"></i></a>
+        <a href="#" class="hover:text-red-800 transition"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Bottom Bar -->
+  <div class="bg-red-800 text-center text-sm py-4">
+    <p>&copy; 2025 ACK St. Faith's Church. All rights reserved.</p>
+  </div>
+</footer>
+
+
+<!-- AOS Animation JS -->
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 1000,
+    once: true,
+  });
+</script>
+</body>
+</html>
