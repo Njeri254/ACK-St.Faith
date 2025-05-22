@@ -57,13 +57,12 @@
 
       <!-- Mobile menu button -->
       <div class="md:hidden">
-        <button id="menu-toggle" aria-label="Toggle menu" class="text-green-700 focus:outline-none">
-          <svg class="w-6 h-6 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-              d="M4 6h16M4 12h16M4 18h16"></path>
-          </svg>
-        </button>
+        <button id="menu-toggle" aria-label="Toggle menu" class="relative w-8 h-8 focus:outline-none">
+  <span class="block absolute h-0.5 w-8 bg-green-700 transform transition duration-300 ease-in-out top-2 open:rotate-45 open:top-4"></span>
+  <span class="block absolute h-0.5 w-8 bg-green-700 transform transition duration-300 ease-in-out top-4 open:opacity-0"></span>
+  <span class="block absolute h-0.5 w-8 bg-green-700 transform transition duration-300 ease-in-out top-6 open:-rotate-45 open:top-4"></span>
+</button>
+
       </div>
 
       <!-- Desktop nav -->
@@ -192,15 +191,14 @@
     const mobileMenu = document.getElementById('mobile-menu');
 
     menuToggle.addEventListener('click', () => {
-      menuToggle.classList.toggle('open');
+  menuToggle.classList.toggle('open');
+  mobileMenu.classList.toggle('hidden');
+});
 
-      // Add bounce animation
-      menuToggle.classList.add('bounce');
-      setTimeout(() => menuToggle.classList.remove('bounce'), 400);
 
-      mobileMenu.classList.toggle('hidden');
-    });
+    
 
+    
     // Toggle dropdowns on mobile submenu
     function toggleDropdown(id, btn) {
       const submenu = document.getElementById(id);
