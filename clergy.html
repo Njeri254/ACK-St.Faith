@@ -70,7 +70,7 @@
       <nav class="hidden md:block">
         <ul class="flex space-x-6 text-sm font-semibold">
           <li class="group relative">
-            <a href="index.html" class="hover:text-green-700 transition-colors duration-300">Home</a>
+            <a href="#" class="hover:text-green-700 transition-colors duration-300">Home</a>
           </li>
           <li class="group relative">
             <button class="hover:text-green-700 flex items-center gap-1 transition-colors duration-300" aria-haspopup="true" aria-expanded="false">
@@ -82,7 +82,7 @@
               tabindex="-1"
             >
               <li><a href="about.html" class="block px-2 py-1 hover:bg-gray-100 rounded transition-colors duration-300">History</a></li>
-              <li><a href="clergy.html" class="block px-2 py-1 hover:bg-gray-100 rounded transition-colors duration-300">Leadership and Clergy</a></li>
+              <li><a href="#" class="block px-2 py-1 hover:bg-gray-100 rounded transition-colors duration-300">Leadership and Clergy</a></li>
             </ul>
           </li>
           <li class="group relative">
@@ -127,7 +127,7 @@
     <!-- Mobile Menu -->
     <div id="mobile-menu" class="md:hidden hidden px-4 pb-4 space-y-4 transition-all duration-300 ease-in-out">
       <ul class="space-y-2 text-sm font-semibold">
-        <li><a href="index.html" class="block hover:text-green-700 transition-colors duration-300">Home</a></li>
+        <li><a href="#" class="block hover:text-green-700 transition-colors duration-300">Home</a></li>
         <li>
           <button
             class="w-full text-left flex justify-between items-center hover:text-green-700 transition-colors duration-300"
@@ -139,8 +139,8 @@
             <i class="fas fa-caret-down inline-block transition-transform duration-300" aria-hidden="true"></i>
           </button>
           <ul id="about-dropdown" class="hidden pl-4 space-y-1 transition-all duration-300 ease-in-out" role="region" aria-label="About submenu">
-            <li><a href="about.html" class="block hover:text-green-700 transition-colors duration-300">History</a></li>
-            <li><a href="clergy.html" class="block hover:text-green-700 transition-colors duration-300">Officials</a></li>
+            <li><a href="#" class="block hover:text-green-700 transition-colors duration-300">History</a></li>
+            <li><a href="#" class="block hover:text-green-700 transition-colors duration-300">Officials</a></li>
           </ul>
         </li>
         <li>
@@ -228,12 +228,12 @@
     <h3 class="text-2xl font-semibold text-maroon-700 mb-6">Clergy Team</h3>
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mt-6">
 
-      <!-- Rev. John Doe -->
+      <!-- Ven. Canon Alfred Muriuki -->
       <div class="bg-white p-4 rounded-xl shadow-md text-center">
-        <img src="/images/rev_john.jpg" alt="Rev. John" class="mx-auto w-32 h-32 object-cover rounded-full mb-4" />
-        <h3 class="text-xl font-bold">Rev. John Doe</h3>
-        <p class="text-sm text-gray-600">Senior Pastor</p>
-        <button onclick="openModal('modal-john')" class="mt-2 text-maroon-700 underline">View Bio</button>
+        <img src="Images/logo.png" alt="Rev. Alfred" class="mx-auto w-32 h-32 object-cover rounded-full mb-4" />
+        <h3 class="text-xl font-bold">Ven. Canon Alfred Muriuki</h3>
+        <p class="text-sm text-gray-600">Vicar</p>
+        <button onclick="openModal('modal-alfred')" class="mt-2 text-maroon-700 underline">View Bio</button>
       </div>
 
       <!-- Rev. Lucy Wambaa -->
@@ -251,6 +251,32 @@
         <p class="text-sm text-gray-600">Clergy</p>
         <button onclick="openModal('modal-peter')" class="mt-2 text-maroon-700 underline">View Bio</button>
       </div>
+
+       <!-- Layreader Johnstone Mukoya -->
+      <div class="bg-white p-4 rounded-xl shadow-md text-center">
+        <img src="Images/johnstone.jpg" alt="Capt. Johnstone" class="mx-auto w-32 h-32 object-cover rounded-full mb-4" />
+        <h3 class="text-xl font-bold">Capt. Johnstone Mukoya</h3>
+        <p class="text-sm text-gray-600">Captain/Layreader</p>
+        <button onclick="openModal('modal-johnstone')" class="mt-2 text-maroon-700 underline">View Bio</button>
+      </div>
+
+       <!-- Layreader Jean Karari -->
+      <div class="bg-white p-4 rounded-xl shadow-md text-center">
+        <img src="Images/jean.jpg" alt="Capt. Jean" class="mx-auto w-32 h-32 object-cover rounded-full mb-4" />
+        <h3 class="text-xl font-bold">Capt. Jean Karari</h3>
+        <p class="text-sm text-gray-600">Captain/Layreader</p>
+        <button onclick="openModal('modal-jean')" class="mt-2 text-maroon-700 underline">View Bio</button>
+      </div>
+
+       <!-- Layreader Victoria Thiga -->
+      <div class="bg-white p-4 rounded-xl shadow-md text-center">
+        <img src="/images/rev_lucy.jpg" alt="Layreader Victoria" class="mx-auto w-32 h-32 object-cover rounded-full mb-4" />
+        <h3 class="text-xl font-bold">Layreader Victoria Thiga</h3>
+        <p class="text-sm text-gray-600">Layreader</p>
+        <button onclick="openModal('modal-victoria')" class="mt-2 text-maroon-700 underline">View Bio</button>
+      </div>
+
+
 
     </div>
   </div>
@@ -272,13 +298,13 @@
   </div>
 
   <!-- Modals -->
-  <div id="modal-john" class="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center hidden">
+  <div id="modal-alfred" class="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center hidden">
     <div class="bg-white p-6 rounded-xl max-w-xl">
-      <h2 class="text-2xl font-bold mb-4">Rev. John Doe</h2>
+      <h2 class="text-2xl font-bold mb-4">Ven. Canon Alfred Muriuki</h2>
       <p class="text-gray-700 mb-4">
-        Rev. John Doe has served as the Senior Pastor at ACK St. Faith’s Church since 2010. He is passionate about discipleship and community outreach.
+        Ve. Canon Alfred Muriuki has served as the Vicar at ACK St. Faith’s Church since May 2025. He is passionate about discipleship and community outreach.
       </p>
-      <button onclick="closeModal('modal-john')" class="mt-2 px-4 py-2 bg-maroon-700 text-white rounded">Close</button>
+      <button onclick="closeModal('modal-alfred')" class="mt-2 px-4 py-2 bg-red-700 text-white rounded">Close</button>
     </div>
   </div>
 
@@ -286,9 +312,9 @@
     <div class="bg-white p-6 rounded-xl max-w-xl">
       <h2 class="text-2xl font-bold mb-4">Rev. Lucy Wambaa</h2>
       <p class="text-gray-700 mb-4">
-        Rev. Lucy Wambaa serves faithfully at ACK St. Faith’s Church and has been instrumental in pastoral care and church programs. Her ministry focuses on community outreach and mentorship.
+        Rev. Lucy Wambaa serves faithfully at ACK St. Faith’s Church and has been instrumental in pastoral care and church programs. Her ministry focuses on community outreach and mentorship. She also serves in Children's ministry.
       </p>
-      <button onclick="closeModal('modal-lucy')" class="mt-2 px-4 py-2 bg-maroon-700 text-white rounded">Close</button>
+      <button onclick="closeModal('modal-lucy')" class="mt-2 px-4 py-2 bg-red-700 text-white rounded">Close</button>
     </div>
   </div>
 
@@ -298,10 +324,28 @@
       <p class="text-gray-700 mb-4">
         Canon Peter Mbugua brings years of wisdom and leadership to ACK St. Faith’s Church. He plays a key role in church governance and spiritual formation.
       </p>
-      <button onclick="closeModal('modal-peter')" class="mt-2 px-4 py-2 bg-maroon-700 text-white rounded">Close</button>
+      <button onclick="closeModal('modal-peter')" class="mt-2 px-4 py-2 bg-red-700 text-white rounded">Close</button>
     </div>
   </div>
 
+  <div id="modal-johnstone" class="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center hidden">
+    <div class="bg-white p-6 rounded-xl max-w-xl">
+      <h2 class="text-2xl font-bold mb-4">Capt. Johnstone Mukoya</h2>
+      <p class="text-gray-700 mb-4">
+        Capt. Johnstone Mukoya is a dedicated layreader at ACK St. Faith’s Church. He is involved in various church activities and community service.
+      <button onclick="closeModal('modal-johnstone')" class="mt-2 px-4 py-2 bg-red-700 text-white rounded">Close</button>
+    </div>
+  </div>
+
+  <div id="modal-jean" class="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center hidden">
+    <div class="bg-white p-6 rounded-xl max-w-xl">
+      <h2 class="text-2xl font-bold mb-4">Capt. Jean Karari</h2>
+      <p class="text-gray-700 mb-4">
+        Capt. Jean Karari is a committed layreader at ACK St. Faith’s Church. She actively participates in church services and community outreach programs.
+      </p>
+      <button onclick="closeModal('modal-jean')" class="mt-2 px-4 py-2 bg-red-800 text-white rounded">Close</button>
+    </div>
+  </div>
   <div id="modal-leader1" class="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center hidden">
     <div class="bg-white p-6 rounded-xl max-w-xl">
       <h2 class="text-2xl font-bold mb-4">Leader One</h2>
