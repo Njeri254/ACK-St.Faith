@@ -182,7 +182,6 @@
     }
   </script>
 
-
 <section class="py-12 px-4 md:px-16 bg-white">
   <div class="text-center mb-10">
     <h2 class="text-4xl font-bold text-maroon-700">Youth Ministry</h2>
@@ -191,8 +190,16 @@
     </p>
   </div>
 
+  <!-- About This Group -->
+  <div class="bg-gray-100 p-6 rounded-xl mb-12">
+    <h3 class="text-2xl font-semibold text-maroon-700 mb-3">About This Group</h3>
+    <p class="text-gray-700">
+      The ACK St. Faith’s Youth Ministry brings together young people between the ages 20 to 35. The group is centered on nurturing faith, leadership, talent, and service through worship, outreach, mentorship, and empowerment programs. We believe in raising a generation of courageous, Christ-centered youth ready to impact the world.
+    </p>
+  </div>
+
   <!-- Activities Section -->
-  <div class="grid md:grid-cols-2 gap-10 items-center">
+  <div class="grid md:grid-cols-2 gap-10 items-center mb-12">
     <img src="Images/youth.jpg" alt="Youth Meeting" class="rounded-xl shadow-lg" />
     <div>
       <h3 class="text-2xl font-semibold text-maroon-700 mb-3">Empowering the Next Generation</h3>
@@ -202,8 +209,36 @@
       <ul class="list-disc pl-5 text-gray-600">
         <li>Youth Worship & Bible Study</li>
         <li>Leadership Training</li>
+        <li>Mission Trips</li>
         <li>Career and Life Guidance</li>
       </ul>
+    </div>
+  </div>
+
+  <!-- Officials Section -->
+  <div class="mb-16">
+    <h3 class="text-2xl font-bold text-center text-maroon-700 mb-6">Our Officials</h3>
+    <div class="grid md:grid-cols-3 gap-6 text-center">
+      <!-- Chairperson -->
+      <div class="bg-white p-4 rounded-xl shadow-md">
+        <img src="/images/youth_chair.jpg" alt="Chairperson" class="mx-auto w-28 h-28 object-cover rounded-full mb-4">
+        <h4 class="text-xl font-bold">Sabina</h4>
+        <p class="text-gray-600 text-sm">Chairperson</p>
+      </div>
+
+      <!-- Secretary -->
+      <div class="bg-white p-4 rounded-xl shadow-md">
+        <img src="/images/youth_secretary.jpg" alt="Secretary" class="mx-auto w-28 h-28 object-cover rounded-full mb-4">
+        <h4 class="text-xl font-bold">John Doe</h4>
+        <p class="text-gray-600 text-sm">Secretary</p>
+      </div>
+
+      <!-- Treasurer -->
+      <div class="bg-white p-4 rounded-xl shadow-md">
+        <img src="/images/youth_treasurer.jpg" alt="Treasurer" class="mx-auto w-28 h-28 object-cover rounded-full mb-4">
+        <h4 class="text-xl font-bold">Chiko</h4>
+        <p class="text-gray-600 text-sm">Treasurer</p>
+      </div>
     </div>
   </div>
 
@@ -226,7 +261,7 @@
         <p class="text-gray-700 italic mb-4" id="testimonialText">
           "Being part of the youth ministry helped me discover my purpose and draw closer to Christ."
         </p>
-        <h4 class="font-semibold text-maroon-700" id="testimonialAuthor">— Reuben M.</h4>
+        <h4 class="font-semibold text-maroon-700" id="testimonialAuthor">— Sarah N.</h4>
       </div>
     </div>
   </div>
@@ -242,8 +277,8 @@
 <script>
   // Simple testimonial rotator
   const testimonials = [
-    { text: `"Being part of the youth ministry helped me discover my purpose and draw closer to Christ."`, author: "— Shabat J." },
-    { text: `"I've made lifelong friends and grown in faith through our youth group."`, author: "— Aswani G." },
+    { text: `"Being part of the youth ministry helped me discover my purpose and draw closer to Christ."`, author: "— Aswani G." },
+    { text: `"I've made lifelong friends and grown in faith through our youth group."`, author: "— Shabat J." },
     { text: `"The mentorship and teachings here are life-transforming."`, author: "— Joy W." }
   ];
   let index = 0;
@@ -253,6 +288,7 @@
     document.getElementById("testimonialAuthor").textContent = testimonials[index].author;
   }, 6000);
 </script>
+
 
 <!-- Footer -->
 <footer class="bg-red-800 text-white mt-16">
@@ -316,3 +352,8 @@
     once: true,
   });
 </script>
+
+</body>
+</html>
+
+  
