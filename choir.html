@@ -94,10 +94,10 @@
               class="absolute left-0 top-full mt-2 space-y-2 w-40 rounded border border-gray-200 bg-white p-2 shadow opacity-0 invisible group-hover:opacity-100 group-hover:visible"
               tabindex="-1"
             >
-              <li><a href="church.html" class="block px-2 py-1 hover:bg-gray-100 rounded transition-colors duration-300">Children and Teens</a></li>
-              <li><a href="youth.html" class="block px-2 py-1 hover:bg-gray-100 rounded transition-colors duration-300">Youth</a></li>
+              <li><a href="children.html" class="block px-2 py-1 hover:bg-gray-100 rounded transition-colors duration-300">Children and Teens</a></li>
+              <li><a href="youth.html" class="block px-2 py-1 hover:bg-gray-100 rounded transition-colors duration-300">KAYO</a></li>
               <li><a href="choir.html" class="block px-2 py-1 hover:bg-gray-100 rounded transition-colors duration-300">Choir and Worship Team</a></li>
-              <li><a href="mission.html" class="block px-2 py-1 hover:bg-gray-100 rounded transition-colors duration-300">Mission Team</a></li>
+              <li><a href="misiion.html" class="block px-2 py-1 hover:bg-gray-100 rounded transition-colors duration-300">Mission Team</a></li>
               <li><a href="kama.html" class="block px-2 py-1 hover:bg-gray-100 rounded transition-colors duration-300">KAMA</a></li>
               <li><a href="mothers.html" class="block px-2 py-1 hover:bg-gray-100 rounded transition-colors duration-300">Mother's Union</a></li>
             </ul>
@@ -113,11 +113,11 @@
             >
               <li><a href="give.php" class="block px-2 py-1 hover:bg-gray-100 rounded transition-colors duration-300">Give</a></li>
               <li><a href="member.html" class="block px-2 py-1 hover:bg-gray-100 rounded transition-colors duration-300">Become a Member</a></li>
-              <li><a href="ministry" class="block px-2 py-1 hover:bg-gray-100 rounded transition-colors duration-300">Join a Ministry</a></li>
+              <li><a href="ministry.html" class="block px-2 py-1 hover:bg-gray-100 rounded transition-colors duration-300">Join a Ministry</a></li>
               <li><a href="career.html" class="block px-2 py-1 hover:bg-gray-100 rounded transition-colors duration-300">Career Opportunities</a></li>
             </ul>
           </li>
-          <li><a href="lirtugy.html" class="hover:text-green-700 transition-colors duration-300">Liturgy</a></li>
+          <li><a href="liturgy.html" class="hover:text-green-700 transition-colors duration-300">Liturgy</a></li>
           <li><a href="hymns.html" class="hover:text-green-700 transition-colors duration-300">Hymns</a></li>
           <li><a href="contacts.html" class="hover:text-green-700 transition-colors duration-300">Contacts</a></li>
         </ul>
@@ -179,7 +179,7 @@
             <li><a href="career.html" class="block hover:text-green-700 transition-colors duration-300">Career Opportunities</a></li>
           </ul>
         </li>
-        <li><a href="lirtugy.html" class="block hover:text-green-700 transition-colors duration-300">Liturgy</a></li>
+        <li><a href="liturgy.html" class="block hover:text-green-700 transition-colors duration-300">Liturgy</a></li>
         <li><a href="hymns.html" class="block hover:text-green-700 transition-colors duration-300">Hymns</a></li>
         <li><a href="contacts.html" class="block hover:text-green-700 transition-colors duration-300">Contacts</a></li>
       </ul>
@@ -195,7 +195,11 @@
       menuToggle.classList.toggle('open');
 
       // Add bounce animation
-  
+      menuToggle.classList.add('bounce');
+      setTimeout(() => menuToggle.classList.remove('bounce'), 400);
+
+      mobileMenu.classList.toggle('hidden');
+    });
 
     // Toggle dropdowns on mobile submenu
     function toggleDropdown(id, btn) {
@@ -213,33 +217,62 @@
     }
   </script>
 
+  <!-- Choir Ministry Section -->
+<section 
+  class="relative bg-cover bg-center text-white py-24 px-4 md:px-20"
+  style="background-image: url('https://images.unsplash.com/photo-1508780709619-79562169bc64?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');"
+  data-aos="fade-up"
+  data-aos-duration="1000"
+>
+  <div class="absolute inset-0 bg-black bg-opacity-60"></div>
+
+  <div class="relative z-10 max-w-4xl mx-auto text-center">
+    <h2 class="text-4xl md:text-5xl font-extrabold text-yellow-300 mb-6">
+      
+    </h2>
+    <p class="text-lg md:text-xl italic text-white hover:text-yellow-200 transition duration-300">
+      “Let everything that has breath praise the Lord. <br class="hidden md:block" />
+      <span class="font-semibold">Praise the Lord!</span>”
+      <br />
+      <span class="block mt-2 font-semibold text-yellow-400">— Psalm 150:6</span>
+    </p>
+  </div>
+</section>
+
 <section class="py-12 px-4 md:px-16 bg-gray-50">
   <div class="text-center mb-12">
-    <h2 class="text-4xl font-bold text-maroon-700">Choir Ministry</h2>
+    <h2 class="text-4xl font-bold text-red-900">Choir Ministry</h2>
     <p class="text-gray-600 mt-4">
-      The Choir Ministry of ACK St. Faith’s Church leads the congregation in worship through music and song. We are dedicated to glorifying God through harmonies that uplift and inspire.
+      The Choir Ministry of ACK St. Faith’s Church is at the heart of our church family, uniting all generations in joyful, Spirit-filled music. Our purpose is to glorify God through hymns, psalms, lirtugical music and songs that ushers the congregation into His presence.
+
+Whether through traditional hymns, or moments of deep reflection, our ministry seeks to lead the church into authentic encounters with God. We welcome every voice, every instrument, and every willing heart to join in lifting high the name of Jesus.
+
+Together, we worship in unity—young and old, new believers and seasoned saints—because worship is for everyone.
+
+
+      leads the congregation in worship through music and song. We are dedicated to glorifying God through harmonies that uplift and inspire.
     </p>
   </div>
 
   <!-- Choir Members -->
   <div class="mb-12">
-    <h3 class="text-2xl font-semibold text-maroon-700 mb-6">Meet Our Choir Leaders</h3>
+    <h3 class="text-2xl font-semibold text-red-900 mb-6">Meet Our Choir Leaders</h3>
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
 
       <!-- Choir Director -->
-      <div class="bg-white p-4 rounded-xl shadow-md text-center">
+      <div data-aos="fade-up" class="bg-white p-4 rounded-xl shadow-md text-center">
         <img src="/images/choir_director.jpg" alt="Choir Director" class="mx-auto w-32 h-32 object-cover rounded-full mb-4" />
         <h3 class="text-xl font-bold">Mr. Timothy Mwangi</h3>
         <p class="text-sm text-gray-600">Choir Director</p>
-        <button onclick="openModal('modal-grace')" class="mt-2 text-maroon-700 underline">View Bio</button>
+        <button onclick="openModal('modal-timothy')" class="mt-2 text-red-900 underline">View Bio</button>
       </div>
 
-      <!-- Assistant Director -->
-      <div class="bg-white p-4 rounded-xl shadow-md text-center">
+      <!-- Chair Lady -->
+      <div data-aos="fade-up" class="bg-white p-4 rounded-xl shadow-md text-center">
         <img src="/images/assistant_director.jpg" alt="Chairlady" class="mx-auto w-32 h-32 object-cover rounded-full mb-4" />
         <h3 class="text-xl font-bold">Mrs. Agnes Ngingo</h3>
         <p class="text-sm text-gray-600">Chairlady</p>
-        <button onclick="openModal('modal-daniel')" class="mt-2 text-maroon-700 underline">View Bio</button>
+        <button onclick="openModal('modal-agnes')" class="mt-2 text-red-900 underline">View Bio</button>
       </div>
 
     </div>
@@ -250,28 +283,28 @@
     <h3 class="text-2xl font-semibold text-maroon-700 mb-4">Practice Schedule</h3>
     <ul class="list-disc list-inside text-gray-700">
       <li><strong>Saturday:</strong> 3:30 PM – 6:00 PM</li>
-      <li><strong>Sunday:</strong> 1:30 AM – 2:30 AM</li>
+      <li><strong>Sunday:</strong> 1:30 PM – 2:30 PM</li>
     </ul>
   </div>
 
   <!-- Modals -->
-  <div id="modal-grace" class="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center hidden">
+  <div id="modal-timothy" class="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center hidden">
     <div class="bg-white p-6 rounded-xl max-w-xl">
       <h2 class="text-2xl font-bold mb-4">Mr. Timothy Mwangi</h2>
       <p class="text-gray-700 mb-4">
         Mr. Mwangi serves faithfully as the choir director and is known for his skill in harmonization and instrumental arrangement. He leads rehearsals and organizies performances. He is passionate about music and worship, and he has a heart for mentoring young musicians. He also plays hymns during Church Services.
       </p>
-      <button onclick="closeModal('modal-grace')" class="mt-2 px-4 py-2 bg-maroon-700 text-white rounded">Close</button>
+      <button onclick="closeModal('modal-timothy')" class="mt-2 px-4 py-2 bg-red-900 text-white rounded">Close</button>
     </div>
   </div>
 
-  <div id="modal-daniel" class="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center hidden">
+  <div id="modal-agnes" class="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center hidden">
     <div class="bg-white p-6 rounded-xl max-w-xl">
       <h2 class="text-2xl font-bold mb-4">Mrs. Agnes Ngingo</h2>
       <p class="text-gray-700 mb-4">
         Mrs. Ngingo is a gifted alto singer with over 10 years of experience in church music ministry. She is passionate about elevating worship through song. Aside from that, she has leadership skills as she serves in the PCC.
       </p>
-      <button onclick="closeModal('modal-daniel')" class="mt-2 px-4 py-2 bg-maroon-700 text-white rounded">Close</button>
+      <button onclick="closeModal('modal-agnes')" class="mt-2 px-4 py-2 bg-red-900 text-white rounded">Close</button>
     </div>
   </div>
 </section>
@@ -284,6 +317,112 @@
     document.getElementById(id).classList.add('hidden');
   }
 </script>
+
+
+<!-- Praise & Worship Section -->
+<section class="relative h-[90vh] bg-cover bg-center bg-no-repeat" style="background-image: url('Images/worship.webp');" data-aos="fade-up">
+  <!-- Dark overlay -->
+  <div class="absolute inset-0 bg-black bg-opacity-60"></div>
+
+  <!-- Content -->
+  <div class="relative z-10 max-w-4xl mx-auto h-full flex flex-col justify-center items-center text-center text-white px-4">
+    <h2 class="text-3xl md:text-4xl font-bold text-white mb-4"></h2>
+
+    <blockquote class="text-xl italic hover:text-yellow-300 transition duration-300">
+      “God is spirit, and those who worship him must worship in spirit and truth.”
+      <span class="block mt-2 font-semibold text-yellow-400">— John 4:24</span>
+    </blockquote>
+
+    
+  </div>
+</section>
+
+
+<section class="py-12 px-4 md:px-16 bg-gray-50">
+  <div class="text-center mb-12">
+    <h2 class="text-4xl font-bold text-red-900">Praise and Worship Ministry</h2>
+    <p class="text-gray-600 mt-4">
+      
+      Praise and Worship is not just music — it is a lifestyle of honoring God with all that we are. At ACK St. Faith’s Church, our Praise and Worship ministry leads the congregation into heartfelt, Spirit-filled worship that exalts the name of Jesus.
+      <br><br>
+      Through songs, instruments, and sincere devotion, we prepare hearts for the Word, create space for the Holy Spirit, and glorify God with excellence, humility, and unity.
+  
+ The Praise & Worship Ministry exists to lead the congregation into the presence of God through heartfelt praise and Spirit-led worship. We believe that worship is not just about music—it’s a lifestyle of surrender, gratitude, and connection with our Creator.
+We believe worship is a powerful way to express our love, gratitude, and reverence for God. It prepares our hearts for the Word, strengthens our faith, and draws us closer to the Lord and to one another.
+
+Together, we worship in unity—young and old, new believers and seasoned saints—because worship is for everyone.
+
+    </p>
+  </div>
+
+  <!-- Worship Members -->
+  <div class="mb-12">
+    <h3 class="text-2xl font-semibold text-red-900 mb-6">Meet Our Leaders</h3>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+
+      <!-- Chair person -->
+      <div data-aos="fade-up" class="bg-white p-4 rounded-xl shadow-md text-center">
+        <img src="/images/choir_director.jpg" alt="Chairperson" class="mx-auto w-32 h-32 object-cover rounded-full mb-4" />
+        <h3 class="text-xl font-bold">Ms. Gladys Aswani</h3>
+        <p class="text-sm text-gray-600">Chair Person</p>
+        <button onclick="openModal('modal-gladys')" class="mt-2 text-red-900 underline">View Bio</button>
+      </div>
+
+      <!-- Vice Chair -->
+      <div data-aos="fade-up" class="bg-white p-4 rounded-xl shadow-md text-center">
+        <img src="/images/assistant_director.jpg" alt="Vice-Chair" class="mx-auto w-32 h-32 object-cover rounded-full mb-4" />
+        <h3 class="text-xl font-bold">Mr. Brian Ruwa</h3>
+        <p class="text-sm text-gray-600">Vice Chair</p>
+        <button onclick="openModal('modal-brian')" class="mt-2 text-red-900 underline">View Bio</button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Weekly Practice Schedule -->
+  <div class="bg-white rounded-xl shadow-md p-6 mb-12">
+    <h3 class="text-2xl font-semibold text-maroon-700 mb-4">Practice Schedule</h3>
+    <ul class="list-disc list-inside text-gray-700">
+      <li><strong>Thursday:</strong> 5:30 PM – 7:00 PM</li>
+      <li><strong>Saturday:</strong> 3:30 PM – 6:00 PM</li>
+      <li><strong>Sunday:</strong> 1:30 PM – 2:30 PM</li>
+      <li><strong>Special Events:</strong> As announced</li>
+    </ul>
+  </div>
+
+  <!-- Modals -->
+  <div id="modal-gladys" class="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center hidden">
+    <div class="bg-white p-6 rounded-xl max-w-xl">
+      <h2 class="text-2xl font-bold mb-4">Ms. Gladys Aswani</h2>
+      <p class="text-gray-700 mb-4">
+        Aswani is an advocate of the high court of Kenya and a passionate worship leader. She has been leading the Praise and Worship ministry for over 5 years, bringing her legal expertise and love for music to create an atmosphere of worship that honors God.
+      </p>
+      <button onclick="closeModal('modal-gladys')" class="mt-2 px-4 py-2 bg-red-900 text-white rounded">Close</button>
+    </div>
+  </div>
+
+  <div id="modal-brian" class="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center hidden">
+    <div class="bg-white p-6 rounded-xl max-w-xl">
+      <h2 class="text-2xl font-bold mb-4">Mr. Brian Ruwa</h2>
+      <p class="text-gray-700 mb-4">
+        Brian is a talented musician and worship leader with a heart for leading others into God’s presence. He plays the guitar and keyboard, and he has a passion for creating an atmosphere of worship that invites the Holy Spirit to move among us.
+        He has been serving in the Praise and Worship ministry for over 5 years, and he is dedicated to mentoring young musicians and singers.
+      </p>
+      <button onclick="closeModal('modal-brian')" class="mt-2 px-4 py-2 bg-red-900 text-white rounded">Close</button>
+    </div>
+  </div>
+</section>
+
+<script>
+  function openModal(id) {
+    document.getElementById(id).classList.remove('hidden');
+  }
+  function closeModal(id) {
+    document.getElementById(id).classList.add('hidden');
+  }
+</script>
+
+
 
 <!-- Footer -->
 <footer class="bg-red-800 text-white mt-16">
