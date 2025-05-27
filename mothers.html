@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ACK St.Faith's Church</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  />
+  <!-- AOS Animation CSS -->
+<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+  <style>
+   
+
+    nav ul li button:hover i,
+    nav ul li button:focus i {
+      animation: bounce-caret 0.4s ease forwards;
+    }
+
+    /* Hamburger icon animation */
+    #menu-toggle svg path {
+      transition: stroke-dasharray 0.4s ease, stroke-dashoffset 0.4s ease;
+      stroke-dasharray: 60 207;
+      stroke-dashoffset: 0;
+    }
+    #menu-toggle.open svg path {
+      stroke-dasharray: 90 207;
+      stroke-dashoffset: -134;
+      transition: stroke-dasharray 0.4s ease, stroke-dashoffset 0.4s ease;
+    }
+    /* Submenu smooth fade */
+    nav ul li ul {
+      transition: opacity 0.3s ease, visibility 0.3s ease;
+      opacity: 0;
+      visibility: hidden;
+    }
+    nav ul li:hover > ul,
+    nav ul li:focus-within > ul {
+      opacity: 1;
+      visibility: visible;
+    }
+  </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+  <!-- Header -->
+  <header class="bg-white shadow sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 py-6 flex justify-between items-center">
+      <a href="index.html" class="flex items-center space-x-3">
+        <img src="Images/logo.png" alt="ACK Logo" class="h-10 w-auto sm:h-12 md:h-14" />
+        <span class="text-2xl font-bold text-red-800 hidden sm:inline-block">ACK St. Faith's Church</span>
+      </a>
+
+      <div class="md:hidden">
+        <button id="menu-toggle" aria-label="Toggle menu" class="text-green-700 focus:outline-none">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Desktop Navigation -->
+      <nav class="hidden md:block">
+        <ul class="flex space-x-6 text-sm font-semibold">
+          <li><a href="index.html" class="hover:text-green-700 transition-colors">Home</a></li>
+          <li class="group relative">
+            <button class="hover:text-green-700 flex items-center gap-1">About
+              <i class="fas fa-caret-down group-hover:rotate-180 transition-transform"></i>
+            </button>
+            <ul class="absolute left-0 top-full mt-2 space-y-2 w-40 rounded bg-white p-2 shadow group-hover:opacity-100 group-hover:visible opacity-0 invisible">
+              <li><a href="about.html" class="block px-2 py-1 hover:bg-gray-100 rounded">History</a></li>
+              <li><a href="clergy.html" class="block px-2 py-1 hover:bg-gray-100 rounded">Leadership and Clergy</a></li>
+            </ul>
+          </li>
+          <li class="group relative">
+            <button class="hover:text-green-700 flex items-center gap-1">Ministries
+              <i class="fas fa-caret-down group-hover:rotate-180 transition-transform"></i>
+            </button>
+            <ul class="absolute left-0 top-full mt-2 space-y-2 w-40 rounded bg-white p-2 shadow group-hover:opacity-100 group-hover:visible opacity-0 invisible">
+              <li><a href="children.html" class="block px-2 py-1 hover:bg-gray-100 rounded">Children and Teens</a></li>
+              <li><a href="youth.html" class="block px-2 py-1 hover:bg-gray-100 rounded">Youth</a></li>
+              <li><a href="choir.html" class="block px-2 py-1 hover:bg-gray-100 rounded">Choir and Worship Team</a></li>
+              <li><a href="mission.html" class="block px-2 py-1 hover:bg-gray-100 rounded">Mission Team</a></li>
+              <li><a href="men.html" class="block px-2 py-1 hover:bg-gray-100 rounded">KAMA</a></li>
+              <li><a href="women.html" class="block px-2 py-1 hover:bg-gray-100 rounded">Mother's Union</a></li>
+            </ul>
+          </li>
+          <li class="group relative">
+            <button class="hover:text-green-700 flex items-center gap-1">Get Involved
+              <i class="fas fa-caret-down group-hover:rotate-180 transition-transform"></i>
+            </button>
+            <ul class="absolute left-0 top-full mt-2 space-y-2 w-40 rounded bg-white p-2 shadow group-hover:opacity-100 group-hover:visible opacity-0 invisible">
+              <li><a href="give.php" class="block px-2 py-1 hover:bg-gray-100 rounded">Give</a></li>
+              <li><a href="member.html" class="block px-2 py-1 hover:bg-gray-100 rounded">Become a Member</a></li>
+              <li><a href="ministry.html" class="block px-2 py-1 hover:bg-gray-100 rounded">Join a Ministry</a></li>
+              <li><a href="career.html" class="block px-2 py-1 hover:bg-gray-100 rounded">Career Opportunities</a></li>
+            </ul>
+          </li>
+          <li><a href="liturgy.html" class="hover:text-green-700 transition-colors">Liturgy</a></li>
+          <li><a href="hymns.html" class="hover:text-green-700 transition-colors">Hymns</a></li>
+          <li><a href="contacts.html" class="hover:text-green-700 transition-colors">Contacts</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="md:hidden hidden px-4 pb-4 space-y-4">
+      <ul class="space-y-2 text-sm font-semibold">
+        <li><a href="index.html" class="block hover:text-green-700">Home</a></li>
+        <li>
+          <button onclick="toggleDropdown('about-dropdown', this)" class="w-full text-left flex justify-between items-center">
+            About <i class="fas fa-caret-down"></i>
+          </button>
+          <ul id="about-dropdown" class="hidden pl-4 space-y-1">
+            <li><a href="about.html" class="block hover:text-green-700">History</a></li>
+            <li><a href="clergy.html" class="block hover:text-green-700">Leadership and Clergy</a></li>
+          </ul>
+        </li>
+        <li>
+          <button onclick="toggleDropdown('ministries-dropdown', this)" class="w-full text-left flex justify-between items-center">
+            Ministries <i class="fas fa-caret-down"></i>
+          </button>
+          <ul id="ministries-dropdown" class="hidden pl-4 space-y-1">
+            <li><a href="children.html" class="block hover:text-green-700">Children and Teens</a></li>
+            <li><a href="youth.html" class="block hover:text-green-700">Youth</a></li>
+            <li><a href="choir.html" class="block hover:text-green-700">Choir and Worship Team</a></li>
+            <li><a href="mission.html" class="block hover:text-green-700">Mission Team</a></li>
+            <li><a href="men.html" class="block hover:text-green-700">KAMA</a></li>
+            <li><a href="women.html" class="block hover:text-green-700">Mother's Union</a></li>
+          </ul>
+        </li>
+        <li>
+          <button onclick="toggleDropdown('getinvolved-dropdown', this)" class="w-full text-left flex justify-between items-center">
+            Get Involved <i class="fas fa-caret-down"></i>
+          </button>
+          <ul id="getinvolved-dropdown" class="hidden pl-4 space-y-1">
+            <li><a href="give.php" class="block hover:text-green-700">Give</a></li>
+            <li><a href="member.html" class="block hover:text-green-700">Become a Member</a></li>
+            <li><a href="ministry.html" class="block hover:text-green-700">Join a Ministry</a></li>
+            <li><a href="career.html" class="block hover:text-green-700">Career Opportunities</a></li>
+          </ul>
+        </li>
+        <li><a href="liturgy.html" class="block hover:text-green-700">Liturgy</a></li>
+        <li><a href="hymns.html" class="block hover:text-green-700">Hymns</a></li>
+        <li><a href="contacts.html" class="block hover:text-green-700">Contacts</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <script>
+    // Toggle mobile menu
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    menuToggle.addEventListener('click', () => {
+      menuToggle.classList.toggle('open');
+
+      // Add bounce animation
+      menuToggle.classList.add('bounce');
+      setTimeout(() => menuToggle.classList.remove('bounce'), 400);
+
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // Toggle dropdowns on mobile submenu
+    function toggleDropdown(id, btn) {
+      const submenu = document.getElementById(id);
+      const isHidden = submenu.classList.contains('hidden');
+      if (isHidden) {
+        submenu.classList.remove('hidden');
+        btn.setAttribute('aria-expanded', 'true');
+        btn.querySelector('i').classList.add('rotate-180');
+      } else {
+        submenu.classList.add('hidden');
+        btn.setAttribute('aria-expanded', 'false');
+        btn.querySelector('i').classList.remove('rotate-180');
+      }
+    }
+  </script>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mothers' Union | ACK St. Faith's Church</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="font-[Nunito Sans] bg-white text-gray-800">
+
+  <!-- Hero Section -->
+  <section class="relative bg-cover bg-center h-[60vh] text-white flex items-center justify-center" style="background-image: url('Images/Compound.png');">
+    <div class="bg-black bg-opacity-60 absolute inset-0"></div>
+    <div class="relative z-10 text-center px-6">
+      <h1 class="text-4xl font-bold mb-2" data-aos="fade-up">Mothers’ Union</h1>
+      <p class="text-lg max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="200">
+         “I can do all things through Christ who strengthens me” Motto Verse: Philippians 4:13
+      </p>
+    </div>
+  </section>
+
+  <!-- Vision and Mission -->
+  <section class="py-16 bg-gray-100">
+    <div class="max-w-6xl mx-auto px-4 text-center">
+      <h2 class="text-3xl font-semibold mb-6" data-aos="fade-up">Our Vision & Mission</h2>
+      <div class="grid md:grid-cols-2 gap-8 mt-8" data-aos="fade-up" data-aos-delay="100">
+        <div class="bg-white p-6 shadow rounded">
+          <h3 class="text-xl font-semibold text-red-900 mb-2">Our Vision</h3>
+          <p>A Stable Family grounded in Christ.</p>
+        </div>
+        <div class="bg-white p-6 shadow rounded">
+          <h3 class="text-xl font-semibold text-red-900 mb-2">Our Mission</h3>
+          <p>To promote programs that contributes to the holistic wellbeing of families</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Leadership Section -->
+  <section class="py-16">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-3xl font-semibold text-center mb-10" data-aos="fade-up">Leadership Team</h2>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div class="text-center" data-aos="zoom-in">
+          <img src="/images/chairperson.jpg" alt="Chairperson" class="w-40 h-40 object-cover rounded-full mx-auto shadow">
+          <h3 class="mt-4 font-bold text-lg">Mrs. Hellen King'ati</h3>
+          <p class="text-sm text-gray-600">ChairLady</p>
+        </div>
+        <div class="text-center" data-aos="zoom-in" data-aos-delay="100">
+          <img src="/images/vice-chair.jpg" alt="Vice Chair" class="w-40 h-40 object-cover rounded-full mx-auto shadow">
+          <h3 class="mt-4 font-bold text-lg">Mrs. </h3>
+          <p class="text-sm text-gray-600">Vice Chairlady</p>
+        </div>
+        <div class="text-center" data-aos="zoom-in" data-aos-delay="200">
+          <img src="/images/secretary.jpg" alt="Secretary" class="w-40 h-40 object-cover rounded-full mx-auto shadow">
+          <h3 class="mt-4 font-bold text-lg">Mrs. </h3>
+          <p class="text-sm text-gray-600">Secretary</p>
+        </div>
+        <div class="text-center" data-aos="zoom-in" data-aos-delay="300">
+          <img src="/images/treasurer.jpg" alt="Treasurer" class="w-40 h-40 object-cover rounded-full mx-auto shadow">
+          <h3 class="mt-4 font-bold text-lg">Mrs.</h3>
+          <p class="text-sm text-gray-600">Treasurer</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- History Section -->
+<section class="py-16 bg-white">
+  <div class="max-w-6xl mx-auto px-4">
+    <h2 class="text-3xl font-semibold text-center mb-8" data-aos="fade-up">Our History</h2>
+    <div class="max-w-4xl mx-auto text-lg text-gray-700 leading-relaxed" data-aos="fade-up" data-aos-delay="100">
+      <p class="mb-6">
+        The Mothers’ Union is a Christian women organization of the Anglican Communion.The Mothers’ Union of the Anglican Church of Kenya is affiliated to the Mothers’ Union Worldwide and operates under the guidance of the Archbishop and the Diocesan Bishops. The Mothers’ Union has over four million members (as at 2018) in 83 countries globally.
+      <p class="mb-6">
+        Mothers’ Union was founded by Mary Sumner in the year 1876 AD. She wanted to create an organization for women that brought together the rich and the poor, the talented and the unskilled, the educated and the illiterate, to build a network that would support Mothers’ of all kinds as they bring up their children in the Christian faith.
+      </p>
+      <p>
+        Since 1908
+In Kenya, Mothers’ Union started in 1908 with women’s fellowships amongst the wives of settlers, government officials and church leaders who were enrolled as members in 1918. The first African women were enrolled in 1956. Since then every Diocese in Kenya has consistently and continuously trained and enrolled women into the Mothers’ Union.
+    </div>
+  </div>
+</section>
+
+
+  <!-- Ministry Highlights -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-3xl font-semibold text-center mb-10" data-aos="fade-up">Ministry in Action</h2>
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="bg-white shadow-lg rounded overflow-hidden" data-aos="fade-right">
+          <img src="/images/event1.jpg" alt="Outreach" class="w-full h-48 object-cover">
+          <div class="p-4">
+            <h3 class="font-semibold text-lg mb-2">Community Outreach</h3>
+            <p class="text-sm text-gray-600">Empowering women and families through prayer and care programs in the community.</p>
+          </div>
+        </div>
+        <div class="bg-white shadow-lg rounded overflow-hidden" data-aos="fade-up">
+          <img src="/images/event2.jpg" alt="Training" class="w-full h-48 object-cover">
+          <div class="p-4">
+            <h3 class="font-semibold text-lg mb-2">Spiritual Growth</h3>
+            <p class="text-sm text-gray-600">Bible study, prayer meetings, and spiritual mentorship for women of all ages.</p>
+          </div>
+        </div>
+        <div class="bg-white shadow-lg rounded overflow-hidden" data-aos="fade-left">
+          <img src="/images/event3.jpg" alt="Support" class="w-full h-48 object-cover">
+          <div class="p-4">
+            <h3 class="font-semibold text-lg mb-2">Support Services</h3>
+            <p class="text-sm text-gray-600">Helping mothers and widows find strength, support, and joy in Christ.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+ 
+
+
+<!-- Footer -->
+<footer class="bg-red-800 text-white mt-16">
+  <div class="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-4 gap-8">
+
+    <!-- Logo & Mission -->
+    <div>
+      <img src="Images/logo.png" alt="Church Logo" class="h-12 mb-4">
+      <p class="text-sm leading-relaxed">
+        ACK St. Faith's Church is committed to spreading the Gospel, building strong Christian families, and serving the community with love and truth.
+      </p>
+    </div>
+
+    <!-- Quick Links -->
+    <div>
+      <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+      <ul class="space-y-2 text-sm">
+        <li><a href="#" class="hover:underline hover:text-red-800 transition">Home</a></li>
+        <li><a href="#" class="hover:underline hover:text-red-800 transition">About Us</a></li>
+        <li><a href="#" class="hover:underline hover:text-red-800 transition">Ministries</a></li>
+        <li><a href="#" class="hover:underline hover:text-red-800 transition">Events</a></li>
+        <li><a href="#" class="hover:underline hover:text-red-800 transition">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- Contact Info -->
+    <div>
+      <h4 class="text-lg font-semibold mb-4">Contact Us</h4>
+      <ul class="space-y-2 text-sm">
+        <li><i class="fas fa-map-marker-alt mr-2 text-green-400"></i> P.O. Box 123, Nairobi, Kenya</li>
+        <li><i class="fas fa-phone mr-2 text-green-400"></i> +254 712 345 678</li>
+        <li><i class="fas fa-envelope mr-2 text-green-400"></i> info@ackstfaith.org</li>
+      </ul>
+    </div>
+
+    <!-- Social Media -->
+    <div>
+      <h4 class="text-lg font-semibold mb-4">Follow Us</h4>
+      <div class="flex space-x-4 text-xl">
+        <a href="#" class="hover:text-red-800 transition"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="hover:text-red-800 transition"><i class="fab fa-twitter"></i></a>
+        <a href="#" class="hover:text-red-800 transition"><i class="fab fa-youtube"></i></a>
+        <a href="#" class="hover:text-red-800 transition"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Bottom Bar -->
+  <div class="bg-red-800 text-center text-sm py-4">
+    <p>&copy; 2025 ACK St. Faith's Church. All rights reserved.</p>
+  </div>
+</footer>
+
+
+<!-- AOS Animation JS -->
+ <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>AOS.init({ duration: 1200, offset: 200 });</script>
+
+</body>
+</html>
+
+  
