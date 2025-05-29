@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ACK St.Faith's Church</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  />
+  <!-- AOS Animation CSS -->
+<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+  <style>
+   
+
+    nav ul li button:hover i,
+    nav ul li button:focus i {
+      animation: bounce-caret 0.4s ease forwards;
+    }
+
+    /* Hamburger icon animation */
+    #menu-toggle svg path {
+      transition: stroke-dasharray 0.4s ease, stroke-dashoffset 0.4s ease;
+      stroke-dasharray: 60 207;
+      stroke-dashoffset: 0;
+    }
+    #menu-toggle.open svg path {
+      stroke-dasharray: 90 207;
+      stroke-dashoffset: -134;
+      transition: stroke-dasharray 0.4s ease, stroke-dashoffset 0.4s ease;
+    }
+    /* Submenu smooth fade */
+    nav ul li ul {
+      transition: opacity 0.3s ease, visibility 0.3s ease;
+      opacity: 0;
+      visibility: hidden;
+    }
+    nav ul li:hover > ul,
+    nav ul li:focus-within > ul {
+      opacity: 1;
+      visibility: visible;
+    }
+  </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+  <!-- Header -->
+  <header class="bg-white shadow sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 py-6 flex justify-between items-center">
+      <a href="index.html" class="flex items-center space-x-3">
+        <img src="Images/logo.png" alt="ACK Logo" class="h-10 w-auto sm:h-12 md:h-14" />
+        <span class="text-2xl font-bold text-red-800 hidden sm:inline-block">ACK St. Faith's Church</span>
+      </a>
+
+      <div class="md:hidden">
+        <button id="menu-toggle" aria-label="Toggle menu" class="text-green-700 focus:outline-none">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Desktop Navigation -->
+      <nav class="hidden md:block">
+        <ul class="flex space-x-6 text-sm font-semibold">
+          <li><a href="index.html" class="hover:text-green-700 transition-colors">Home</a></li>
+          <li class="group relative">
+            <button class="hover:text-green-700 flex items-center gap-1">About
+              <i class="fas fa-caret-down group-hover:rotate-180 transition-transform"></i>
+            </button>
+            <ul class="absolute left-0 top-full mt-2 space-y-2 w-40 rounded bg-white p-2 shadow group-hover:opacity-100 group-hover:visible opacity-0 invisible">
+              <li><a href="about.html" class="block px-2 py-1 hover:bg-gray-100 rounded">History</a></li>
+              <li><a href="clergy.html" class="block px-2 py-1 hover:bg-gray-100 rounded">Leadership and Clergy</a></li>
+            </ul>
+          </li>
+          <li class="group relative">
+            <button class="hover:text-green-700 flex items-center gap-1">Ministries
+              <i class="fas fa-caret-down group-hover:rotate-180 transition-transform"></i>
+            </button>
+            <ul class="absolute left-0 top-full mt-2 space-y-2 w-40 rounded bg-white p-2 shadow group-hover:opacity-100 group-hover:visible opacity-0 invisible">
+              <li><a href="children.html" class="block px-2 py-1 hover:bg-gray-100 rounded">Children and Teens</a></li>
+              <li><a href="youth.html" class="block px-2 py-1 hover:bg-gray-100 rounded">Youth</a></li>
+              <li><a href="choir.html" class="block px-2 py-1 hover:bg-gray-100 rounded">Choir and Worship Team</a></li>
+              <li><a href="mission.html" class="block px-2 py-1 hover:bg-gray-100 rounded">Mission Team</a></li>
+              <li><a href="men.html" class="block px-2 py-1 hover:bg-gray-100 rounded">KAMA</a></li>
+              <li><a href="women.html" class="block px-2 py-1 hover:bg-gray-100 rounded">Mother's Union</a></li>
+            </ul>
+          </li>
+          <li class="group relative">
+            <button class="hover:text-green-700 flex items-center gap-1">Get Involved
+              <i class="fas fa-caret-down group-hover:rotate-180 transition-transform"></i>
+            </button>
+            <ul class="absolute left-0 top-full mt-2 space-y-2 w-40 rounded bg-white p-2 shadow group-hover:opacity-100 group-hover:visible opacity-0 invisible">
+              <li><a href="give.php" class="block px-2 py-1 hover:bg-gray-100 rounded">Give</a></li>
+              <li><a href="member.html" class="block px-2 py-1 hover:bg-gray-100 rounded">Become a Member</a></li>
+              <li><a href="ministry.html" class="block px-2 py-1 hover:bg-gray-100 rounded">Join a Ministry</a></li>
+              <li><a href="career.html" class="block px-2 py-1 hover:bg-gray-100 rounded">Career Opportunities</a></li>
+            </ul>
+          </li>
+          <li><a href="liturgy.html" class="hover:text-green-700 transition-colors">Liturgy</a></li>
+          <li><a href="hymns.html" class="hover:text-green-700 transition-colors">Hymns</a></li>
+          <li><a href="contacts.html" class="hover:text-green-700 transition-colors">Contacts</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="md:hidden hidden px-4 pb-4 space-y-4">
+      <ul class="space-y-2 text-sm font-semibold">
+        <li><a href="index.html" class="block hover:text-green-700">Home</a></li>
+        <li>
+          <button onclick="toggleDropdown('about-dropdown', this)" class="w-full text-left flex justify-between items-center">
+            About <i class="fas fa-caret-down"></i>
+          </button>
+          <ul id="about-dropdown" class="hidden pl-4 space-y-1">
+            <li><a href="about.html" class="block hover:text-green-700">History</a></li>
+            <li><a href="clergy.html" class="block hover:text-green-700">Leadership and Clergy</a></li>
+          </ul>
+        </li>
+        <li>
+          <button onclick="toggleDropdown('ministries-dropdown', this)" class="w-full text-left flex justify-between items-center">
+            Ministries <i class="fas fa-caret-down"></i>
+          </button>
+          <ul id="ministries-dropdown" class="hidden pl-4 space-y-1">
+            <li><a href="children.html" class="block hover:text-green-700">Children and Teens</a></li>
+            <li><a href="youth.html" class="block hover:text-green-700">Youth</a></li>
+            <li><a href="choir.html" class="block hover:text-green-700">Choir and Worship Team</a></li>
+            <li><a href="mission.html" class="block hover:text-green-700">Mission Team</a></li>
+            <li><a href="men.html" class="block hover:text-green-700">KAMA</a></li>
+            <li><a href="women.html" class="block hover:text-green-700">Mother's Union</a></li>
+          </ul>
+        </li>
+        <li>
+          <button onclick="toggleDropdown('getinvolved-dropdown', this)" class="w-full text-left flex justify-between items-center">
+            Get Involved <i class="fas fa-caret-down"></i>
+          </button>
+          <ul id="getinvolved-dropdown" class="hidden pl-4 space-y-1">
+            <li><a href="give.php" class="block hover:text-green-700">Give</a></li>
+            <li><a href="member.html" class="block hover:text-green-700">Become a Member</a></li>
+            <li><a href="ministry.html" class="block hover:text-green-700">Join a Ministry</a></li>
+            <li><a href="career.html" class="block hover:text-green-700">Career Opportunities</a></li>
+          </ul>
+        </li>
+        <li><a href="liturgy.html" class="block hover:text-green-700">Liturgy</a></li>
+        <li><a href="hymns.html" class="block hover:text-green-700">Hymns</a></li>
+        <li><a href="contacts.html" class="block hover:text-green-700">Contacts</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <script>
+    // Toggle mobile menu
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    menuToggle.addEventListener('click', () => {
+      menuToggle.classList.toggle('open');
+
+      // Add bounce animation
+      menuToggle.classList.add('bounce');
+      setTimeout(() => menuToggle.classList.remove('bounce'), 400);
+
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // Toggle dropdowns on mobile submenu
+    function toggleDropdown(id, btn) {
+      const submenu = document.getElementById(id);
+      const isHidden = submenu.classList.contains('hidden');
+      if (isHidden) {
+        submenu.classList.remove('hidden');
+        btn.setAttribute('aria-expanded', 'true');
+        btn.querySelector('i').classList.add('rotate-180');
+      } else {
+        submenu.classList.add('hidden');
+        btn.setAttribute('aria-expanded', 'false');
+        btn.querySelector('i').classList.remove('rotate-180');
+      }
+    }
+  </script>
+
+    <!-- Hero Section -->
+
+  <section class="py-10 px-4">
+    <div class="max-w-4xl mx-auto text-center mb-6">
+      <h2 class="text-4xl font-bold text-maroon-700">🎵 Nyimbo Standard</h2>
+      <input 
+        type="text" 
+        id="search" 
+        placeholder="Search by title or number..." 
+        class="mt-4 w-full md:w-2/3 mx-auto border border-gray-300 rounded p-2 shadow focus:outline-none focus:ring-2 focus:ring-maroon-700" />
+    </div>
+
+    <div id="hymnList" class="max-w-4xl mx-auto space-y-4">
+      <!-- Hymn items appear here -->
+    </div>
+  </section>
+
+  <script>
+    let hymns = [];
+
+    async function loadHymns() {
+      const res = await fetch('hymns.json'); // Update to your correct path
+      hymns = await res.json();
+      displayHymns(hymns);
+    }
+
+    function displayHymns(hymnsToDisplay) {
+      const container = document.getElementById('hymnList');
+      container.innerHTML = '';
+
+      hymnsToDisplay.forEach(hymn => {
+        const wrapper = document.createElement('div');
+        wrapper.className = 'bg-white rounded shadow p-4 border-l-4 border-maroon-700';
+
+        const header = document.createElement('div');
+        header.className = 'flex items-center justify-between cursor-pointer';
+        header.onclick = () => {
+          lyrics.classList.toggle('max-h-0');
+          lyrics.classList.toggle('max-h-[1000px]');
+          lyrics.classList.toggle('py-2');
+          icon.textContent = icon.textContent === '+' ? '–' : '+';
+        };
+
+        const title = document.createElement('h3');
+        title.className = 'text-lg md:text-xl font-semibold text-maroon-700';
+        title.textContent = `#${hymn.number}: ${hymn.title}`;
+
+        const icon = document.createElement('span');
+        icon.className = 'text-2xl font-bold text-maroon-700';
+        icon.textContent = '+';
+
+        header.appendChild(title);
+        header.appendChild(icon);
+
+        const lyrics = document.createElement('pre');
+        lyrics.className = 'overflow-hidden max-h-0 transition-all duration-500 ease-in-out whitespace-pre-wrap text-gray-700';
+        lyrics.textContent = hymn.lyrics;
+
+        wrapper.appendChild(header);
+        wrapper.appendChild(lyrics);
+        container.appendChild(wrapper);
+      });
+    }
+
+    document.getElementById('search').addEventListener('input', (e) => {
+      const term = e.target.value.toLowerCase();
+      const filtered = hymns.filter(hymn =>
+        hymn.title.toLowerCase().includes(term) || hymn.number.toString() === term
+      );
+      displayHymns(filtered);
+    });
+
+    window.onload = loadHymns;
+  </script>
+
+
+
+
+<!-- Footer -->
+<footer class="bg-red-800 text-white mt-16">
+  <div class="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-4 gap-8">
+
+    <!-- Logo & Mission -->
+    <div>
+      <img src="Images/logo.png" alt="Church Logo" class="h-12 mb-4">
+      <p class="text-sm leading-relaxed">
+        ACK St. Faith's Church is committed to spreading the Gospel, building strong Christian families, and serving the community with love and truth.
+      </p>
+    </div>
+
+    <!-- Quick Links -->
+    <div>
+      <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+      <ul class="space-y-2 text-sm">
+        <li><a href="#" class="hover:underline hover:text-red-800 transition">Home</a></li>
+        <li><a href="#" class="hover:underline hover:text-red-800 transition">About Us</a></li>
+        <li><a href="#" class="hover:underline hover:text-red-800 transition">Ministries</a></li>
+        <li><a href="#" class="hover:underline hover:text-red-800 transition">Events</a></li>
+        <li><a href="#" class="hover:underline hover:text-red-800 transition">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- Contact Info -->
+    <div>
+      <h4 class="text-lg font-semibold mb-4">Contact Us</h4>
+      <ul class="space-y-2 text-sm">
+        <li><i class="fas fa-map-marker-alt mr-2 text-green-400"></i> P.O. Box 123, Nairobi, Kenya</li>
+        <li><i class="fas fa-phone mr-2 text-green-400"></i> +254 712 345 678</li>
+        <li><i class="fas fa-envelope mr-2 text-green-400"></i> info@ackstfaith.org</li>
+      </ul>
+    </div>
+
+    <!-- Social Media -->
+    <div>
+      <h4 class="text-lg font-semibold mb-4">Follow Us</h4>
+      <div class="flex space-x-4 text-xl">
+        <a href="#" class="hover:text-red-800 transition"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="hover:text-red-800 transition"><i class="fab fa-twitter"></i></a>
+        <a href="#" class="hover:text-red-800 transition"><i class="fab fa-youtube"></i></a>
+        <a href="#" class="hover:text-red-800 transition"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Bottom Bar -->
+  <div class="bg-red-800 text-center text-sm py-4">
+    <p>&copy; 2025 ACK St. Faith's Church. All rights reserved.</p>
+  </div>
+</footer>
+
+
+<!-- AOS Animation JS -->
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 1000,
+    once: true,
+  });
+</script>
+
+
+</body>
+</html>
