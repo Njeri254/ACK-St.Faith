@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="en" class="dark">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -9,194 +9,279 @@
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
   />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
   <!-- AOS Animation CSS -->
 <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
 
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+    };
+  </script>
   <style>
-   
-
-    nav ul li button:hover i,
-    nav ul li button:focus i {
-      animation: bounce-caret 0.4s ease forwards;
+    .hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background-color: #800000; /* maroon */
+      margin: 5px auto;
+      transition: all 0.4s ease-in-out;
     }
-
-    /* Hamburger icon animation */
-    #menu-toggle svg path {
-      transition: stroke-dasharray 0.4s ease, stroke-dashoffset 0.4s ease;
-      stroke-dasharray: 60 207;
-      stroke-dashoffset: 0;
+    .hamburger.open span:nth-child(1) {
+      transform: translateY(7px) rotate(45deg);
     }
-    #menu-toggle.open svg path {
-      stroke-dasharray: 90 207;
-      stroke-dashoffset: -134;
-      transition: stroke-dasharray 0.4s ease, stroke-dashoffset 0.4s ease;
-    }
-    /* Submenu smooth fade */
-    nav ul li ul {
-      transition: opacity 0.3s ease, visibility 0.3s ease;
+    .hamburger.open span:nth-child(2) {
       opacity: 0;
-      visibility: hidden;
     }
-    nav ul li:hover > ul,
-    nav ul li:focus-within > ul {
-      opacity: 1;
-      visibility: visible;
+    .hamburger.open span:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg);
+    }
+    .overlay {
+      backdrop-filter: blur(5px);
+    }
+    .rotate-180 {
+      transform: rotate(180deg);
+    }
+    #dark-toggle {
+      color: #800000; /* maroon */
+      font-size: 1.5rem;
+      cursor: pointer;
+      z-index: 60;
     }
   </style>
 </head>
-<body class="bg-gray-100 text-gray-800">
+<body class="bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-white">
 
-  <!-- Header -->
-  <header class="bg-white shadow sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 py-6 flex justify-between items-center">
-      <a href="index.html" class="flex items-center space-x-3">
-        <img src="Images/logo.png" alt="ACK Logo" class="h-10 w-auto sm:h-12 md:h-14" />
-        <span class="text-2xl font-bold text-red-800 hidden sm:inline-block">ACK St. Faith's Church</span>
-      </a>
+<!-- Overlay -->
+<div id="overlay" class="fixed inset-0 bg-black/40 overlay z-40 hidden transition-opacity duration-300"></div>
 
-      <div class="md:hidden">
-        <button id="menu-toggle" aria-label="Toggle menu" class="text-green-700 focus:outline-none">
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-              d="M4 6h16M4 12h16M4 18h16"></path>
+<!-- Header -->
+<header class="bg-white dark:bg-gray-800 shadow sticky top-0 z-50">
+  <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center relative">
+    <a href="index.html" class="flex items-center space-x-3">
+      <img src="Images/logo.png" alt="ACK Logo" class="h-10 w-auto" />
+      <span class="text-xl font-bold text-red-800 dark:text-red-400">ACK St. Faith's Church</span>
+    </a>
+
+    <!-- Desktop Navigation -->
+    <nav class="hidden md:flex space-x-6 font-semibold text-sm">
+      <a href="index.html" class="hover:text-red-800 dark:hover:text-red-400">Home</a>
+      <div class="relative group">
+        <button class="flex items-center gap-1 hover:text-red-800 dark:hover:text-red-400" aria-expanded="false" aria-haspopup="true">
+          About
+          <svg class="w-4 h-4 transition-transform duration-300 group-hover:rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
           </svg>
         </button>
-      </div>
-
-      <!-- Desktop Navigation -->
-      <nav class="hidden md:block">
-        <ul class="flex space-x-6 text-sm font-semibold">
-          <li><a href="index.html" class="hover:text-green-700 transition-colors">Home</a></li>
-          <li class="group relative">
-            <button class="hover:text-green-700 flex items-center gap-1">About
-              <i class="fas fa-caret-down group-hover:rotate-180 transition-transform"></i>
-            </button>
-            <ul class="absolute left-0 top-full mt-2 space-y-2 w-40 rounded bg-white p-2 shadow group-hover:opacity-100 group-hover:visible opacity-0 invisible">
-              <li><a href="about.html" class="block px-2 py-1 hover:bg-gray-100 rounded">History</a></li>
-              <li><a href="clergy.html" class="block px-2 py-1 hover:bg-gray-100 rounded">Leadership and Clergy</a></li>
-            </ul>
-          </li>
-          <li class="group relative">
-            <button class="hover:text-green-700 flex items-center gap-1">Ministries
-              <i class="fas fa-caret-down group-hover:rotate-180 transition-transform"></i>
-            </button>
-            <ul class="absolute left-0 top-full mt-2 space-y-2 w-40 rounded bg-white p-2 shadow group-hover:opacity-100 group-hover:visible opacity-0 invisible">
-              <li><a href="children.html" class="block px-2 py-1 hover:bg-gray-100 rounded">Children and Teens</a></li>
-              <li><a href="youth.html" class="block px-2 py-1 hover:bg-gray-100 rounded">Youth</a></li>
-              <li><a href="choir.html" class="block px-2 py-1 hover:bg-gray-100 rounded">Choir and Worship Team</a></li>
-              <li><a href="mission.html" class="block px-2 py-1 hover:bg-gray-100 rounded">Mission Team</a></li>
-              <li><a href="men.html" class="block px-2 py-1 hover:bg-gray-100 rounded">KAMA</a></li>
-              <li><a href="women.html" class="block px-2 py-1 hover:bg-gray-100 rounded">Mother's Union</a></li>
-            </ul>
-          </li>
-          <li class="group relative">
-            <button class="hover:text-green-700 flex items-center gap-1">Get Involved
-              <i class="fas fa-caret-down group-hover:rotate-180 transition-transform"></i>
-            </button>
-            <ul class="absolute left-0 top-full mt-2 space-y-2 w-40 rounded bg-white p-2 shadow group-hover:opacity-100 group-hover:visible opacity-0 invisible">
-              <li><a href="give.php" class="block px-2 py-1 hover:bg-gray-100 rounded">Give</a></li>
-              <li><a href="member.html" class="block px-2 py-1 hover:bg-gray-100 rounded">Become a Member</a></li>
-              <li><a href="ministry.html" class="block px-2 py-1 hover:bg-gray-100 rounded">Join a Ministry</a></li>
-              <li><a href="career.html" class="block px-2 py-1 hover:bg-gray-100 rounded">Career Opportunities</a></li>
-            </ul>
-          </li>
-          <li><a href="liturgy.html" class="hover:text-green-700 transition-colors">Liturgy</a></li>
-          <li><a href="hymns.html" class="hover:text-green-700 transition-colors">Hymns</a></li>
-          <li><a href="contacts.html" class="hover:text-green-700 transition-colors">Contacts</a></li>
+        <ul class="absolute left-0 top-full mt-2 space-y-1 bg-white dark:bg-gray-700 text-black dark:text-white shadow rounded opacity-0 invisible group-hover:visible group-hover:opacity-100 transition-all duration-300 p-2 z-50">
+          <li><a href="about.html" class="block px-2 py-1 hover:bg-gray-100 dark:hover:bg-gray-600 rounded">History</a></li>
+          <li><a href="clergy.html" class="block px-2 py-1 hover:bg-gray-100 dark:hover:bg-gray-600 rounded">Leadership and Clergy</a></li>
         </ul>
-      </nav>
+      </div>
+      <div class="relative group">
+        <button class="flex items-center gap-1 hover:text-red-800 dark:hover:text-red-400" aria-expanded="false" aria-haspopup="true">
+          Ministries
+          <svg class="w-4 h-4 transition-transform duration-300 group-hover:rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
+        <ul class="absolute left-0 top-full mt-2 space-y-1 bg-white dark:bg-gray-700 text-black dark:text-white shadow rounded opacity-0 invisible group-hover:visible group-hover:opacity-100 transition-all duration-300 p-2 z-50">
+          <li><a href="children.html" class="block px-2 py-1 hover:bg-gray-100 dark:hover:bg-gray-600 rounded">Children and Teens</a></li>
+          <li><a href="youth.html" class="block px-2 py-1 hover:bg-gray-100 dark:hover:bg-gray-600 rounded">Youth</a></li>
+          <li><a href="choir.html" class="block px-2 py-1 hover:bg-gray-100 dark:hover:bg-gray-600 rounded">Choir and Worship Team</a></li>
+          <li><a href="mission.html" class="block px-2 py-1 hover:bg-gray-100 dark:hover:bg-gray-600 rounded">Outreach and Missions</a></li>
+          <li><a href="kama.html" class="block px-2 py-1 hover:bg-gray-100 dark:hover:bg-gray-600 rounded">KAMA</a></li>
+          <li><a href="mothers.html" class="block px-2 py-1 hover:bg-gray-100 dark:hover:bg-gray-600 rounded">Mothers' Union</a></li>
+        </ul>
+      </div>
+      <div class="relative group">
+        <button class="flex items-center gap-1 hover:text-red-800 dark:hover:text-red-400" aria-expanded="false" aria-haspopup="true">
+          Boards
+          <svg class="w-4 h-4 transition-transform duration-300 group-hover:rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
+        <ul class="absolute left-0 top-full mt-2 space-y-1 bg-white dark:bg-gray-700 text-black dark:text-white shadow rounded opacity-0 invisible group-hover:visible group-hover:opacity-100 transition-all duration-300 p-2 z-50">
+          <li><a href="finance.html" class="block px-2 py-1 hover:bg-gray-100 dark:hover:bg-gray-600 rounded">Board of Finance</a></li>
+          <li><a href="communication.html" class="block px-2 py-1 hover:bg-gray-100 dark:hover:bg-gray-600 rounded">Board of Communication</a></li>
+          <li><a href="mission.html" class="block px-2 py-1 hover:bg-gray-100 dark:hover:bg-gray-600 rounded">Board of Mission</a></li>
+          <li><a href="deveolpment.html" class="block px-2 py-1 hover:bg-gray-100 dark:hover:bg-gray-600 rounded">Board of Development Services</a></li>  
+        </ul>
+      </div>
+      <div class="relative group">
+        <button class="flex items-center gap-1 hover:text-red-800 dark:hover:text-red-400" aria-expanded="false" aria-haspopup="true">
+          Get Involved
+          <svg class="w-4 h-4 transition-transform duration-300 group-hover:rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
+        <ul class="absolute left-0 top-full mt-2 space-y-1 bg-white dark:bg-gray-700 text-black dark:text-white shadow rounded opacity-0 invisible group-hover:visible group-hover:opacity-100 transition-all duration-300 p-2 z-50">
+          <li><a href="give.php" class="block px-2 py-1 hover:bg-gray-100 dark:hover:bg-gray-600 rounded">Give</a></li>
+          <li><a href="member.html" class="block px-2 py-1 hover:bg-gray-100 dark:hover:bg-gray-600 rounded">Become a Member</a></li>
+          <li><a href="ministry.html" class="block px-2 py-1 hover:bg-gray-100 dark:hover:bg-gray-600 rounded">Join a Ministry</a></li>
+          <li><a href="career.html" class="block px-2 py-1 hover:bg-gray-100 dark:hover:bg-gray-600 rounded">Career Opportunities</a></li>
+        </ul>
+      </div>
+      <a href="lirtugy.html" class="hover:text-red-800 dark:hover:text-red-400">Lirtugy</a>
+      <div class="relative group">
+        <button class="flex items-center gap-1 hover:text-red-800 dark:hover:text-red-400" aria-expanded="false" aria-haspopup="true">
+          Hymns
+          <svg class="w-4 h-4 transition-transform duration-300 group-hover:rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          </svg>  
+        </button>
+        <ul class="absolute left-0 top-full mt-2 space-y-1 bg-white dark:bg-gray-700 text-black dark:text-white shadow rounded opacity-0 invisible group-hover:visible group-hover:opacity-100 transition-all duration-300 p-2 z-50">
+          <li><a href="bells.html" class="block px-2 py-1 hover:bg-gray-100 dark:hover:bg-gray-600 rounded">Golden Bells</a></li>
+          <li><a href="nyimbo.html" class="block px-2 py-1 hover:bg-gray-100 dark:hover:bg-gray-600 rounded">Nyimbo Standard</a></li>
+        </ul>
+      </div>
+      <a href="contacts.html" class="hover:text-red-800 dark:hover:text-red-400">Contact</a>
+    </nav>
+
+    <!-- Dark mode toggle -->
+    <button id="dark-toggle" aria-label="Toggle dark mode" class="absolute right-14 top-1/2 -translate-y-1/2 md:static md:translate-y-0">
+      <i id="dark-icon" class="fas fa-moon"></i>
+    </button>
+
+    <!-- Hamburger -->
+    <div class="md:hidden z-50">
+      <button id="menu-toggle" class="hamburger focus:outline-none relative z-50" aria-label="Toggle menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </div>
+  </div>
 
-    <!-- Mobile Menu -->
-    <div id="mobile-menu" class="md:hidden hidden px-4 pb-4 space-y-4">
-      <ul class="space-y-2 text-sm font-semibold">
-        <li><a href="index.html" class="block hover:text-green-700">Home</a></li>
-        <li>
-          <button onclick="toggleDropdown('about-dropdown', this)" class="w-full text-left flex justify-between items-center">
-            About <i class="fas fa-caret-down"></i>
-          </button>
-          <ul id="about-dropdown" class="hidden pl-4 space-y-1">
-            <li><a href="about.html" class="block hover:text-green-700">History</a></li>
-            <li><a href="clergy.html" class="block hover:text-green-700">Leadership and Clergy</a></li>
-          </ul>
-        </li>
-        <li>
-          <button onclick="toggleDropdown('ministries-dropdown', this)" class="w-full text-left flex justify-between items-center">
-            Ministries <i class="fas fa-caret-down"></i>
-          </button>
-          <ul id="ministries-dropdown" class="hidden pl-4 space-y-1">
-            <li><a href="children.html" class="block hover:text-green-700">Children and Teens</a></li>
-            <li><a href="youth.html" class="block hover:text-green-700">Youth</a></li>
-            <li><a href="choir.html" class="block hover:text-green-700">Choir and Worship Team</a></li>
-            <li><a href="mission.html" class="block hover:text-green-700">Mission Team</a></li>
-            <li><a href="men.html" class="block hover:text-green-700">KAMA</a></li>
-            <li><a href="women.html" class="block hover:text-green-700">Mother's Union</a></li>
-          </ul>
-        </li>
-        <li>
-          <button onclick="toggleDropdown('getinvolved-dropdown', this)" class="w-full text-left flex justify-between items-center">
-            Get Involved <i class="fas fa-caret-down"></i>
-          </button>
-          <ul id="getinvolved-dropdown" class="hidden pl-4 space-y-1">
-            <li><a href="give.php" class="block hover:text-green-700">Give</a></li>
-            <li><a href="member.html" class="block hover:text-green-700">Become a Member</a></li>
-            <li><a href="ministry.html" class="block hover:text-green-700">Join a Ministry</a></li>
-            <li><a href="career.html" class="block hover:text-green-700">Career Opportunities</a></li>
-          </ul>
-        </li>
-        <li><a href="liturgy.html" class="block hover:text-green-700">Liturgy</a></li>
-        <li><a href="hymns.html" class="block hover:text-green-700">Hymns</a></li>
-        <li><a href="contacts.html" class="block hover:text-green-700">Contacts</a></li>
-      </ul>
-    </div>
-  </header>
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="fixed top-0 left-0 w-3/4 max-w-sm h-full bg-white dark:bg-gray-800 shadow transform -translate-x-full transition-transform duration-300 z-50 p-6 space-y-4 overflow-y-auto">
+    <ul class="space-y-3 font-semibold text-sm">
+      <li><a href="index.html" class="block hover:text-red-800 dark:hover:text-red-400">Home</a></li>
+      <li>
+        <button onclick="toggleDropdown('mobile-about')" class="w-full flex justify-between items-center hover:text-red-800 dark:hover:text-red-400" aria-expanded="false" aria-controls="mobile-about">
+          <span>About</span>
+          <svg id="icon-mobile-about" class="w-4 h-4 transition-transform duration-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
+        <ul id="mobile-about" class="pl-4 mt-2 space-y-2 hidden">
+          <li><a href="about.html" class="block hover:text-red-800 dark:hover:text-red-400">History</a></li>
+          <li><a href="clergy.html" class="block hover:text-red-800 dark:hover:text-red-400">Leadership</a></li>
+        </ul>
+      </li>
+      <li>
+        <button onclick="toggleDropdown('mobile-ministries')" class="w-full flex justify-between items-center hover:text-red-800 dark:hover:text-red-400" aria-expanded="false" aria-controls="mobile-ministries">
+          <span>Ministries</span>
+          <svg id="icon-mobile-ministries" class="w-4 h-4 transition-transform duration-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
+        <ul id="mobile-ministries" class="pl-4 mt-2 space-y-2 hidden">
+          <li><a href="children.html" class="block hover:text-red-800 dark:hover:text-red-400">Children and Teens</a></li>
+          <li><a href="youth.html" class="block hover:text-red-800 dark:hover:text-red-400">Youth</a></li>
+          <li><a href="choir.html" class="block hover:text-red-800 dark:hover:text-red-400">Choir and Worship Team</a></li>
+          <li><a href="mission.html" class="block hover:text-red-800 dark:hover:text-red-400">Outreach and Missions</a></li>
+          <li><a href="kama.html" class="block hover:text-red-800 dark:hover:text-red-400">KAMA</a></li>
+          <li><a href="mothers.html" class="block hover:text-red-800 dark:hover:text-red-400">Mothers' Union</a></li>
+        </ul>
+      </li>
+      <li>
+        <button onclick="toggleDropdown('mobile-boards')" class="w-full flex justify-between items-center hover:text-red-800 dark:hover:text-red-400" aria-expanded="false" aria-controls="mobile-boards">
+          <span>Boards</span>
+          <svg id="icon-mobile-boards" class="w-4 h-4 transition-transform duration-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
+        <ul id="mobile-boards" class="pl-4 mt-2 space-y-2 hidden">
+          <li><a href="finance.html" class="block hover:text-red-800 dark:hover:text-red-400">Board of Finance</a></li>
+          <li><a href="communication.html" class="block hover:text-red-800 dark:hover:text-red-400">Board of Communication</a></li>
+          <li><a href="mission.html" class="block hover:text-red-800 dark:hover:text-red-400">Board of Mission</a></li>
+          <li><a href="deveolpment.html" class="block hover:text-red-800 dark:hover:text-red-400">Board of Development Services</a></li>
+        </ul>
+      </li>
+      <li>
+        <button onclick="toggleDropdown('mobile-get-involved')" class="w-full flex justify-between items-center hover:text-red-800 dark:hover:text-red-400" aria-expanded="false" aria-controls="mobile-get-involved">
+          <span>Get Involved</span>
+          <svg id="icon-mobile-get-involved" class="w-4 h-4 transition-transform duration-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
+        <ul id="mobile-get-involved" class="pl-4 mt-2 space-y-2 hidden">
+          <li><a href="give.php" class="block hover:text-red-800 dark:hover:text-red-400">Give</a></li>
+          <li><a href="member.html" class="block hover:text-red-800 dark:hover:text-red-400">Become a Member</a></li>
+          <li><a href="ministry.html" class="block hover:text-red-800 dark:hover:text-red-400">Join a Ministry</a></li>
+          <li><a href="career.html" class="block hover:text-red-800 dark:hover:text-red-400">Career Opportunities</a></li>
+        </ul>
+      </li>
+      <li><a href="lirtugy.html" class="block hover:text-red-800 dark:hover:text-red-400">Lirtugy</a></li>
+      <li>
+        <button onclick="toggleDropdown('mobile-hymns')" class="w-full flex justify-between items-center hover:text-red-800 dark:hover:text-red-400" aria-expanded="false" aria-controls="mobile-hymns">
+          <span>Hymns</span>
+          <svg id="icon-mobile-hymns" class="w-4 h-4 transition-transform duration-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
+        <ul id="mobile-hymns" class="pl-4 mt-2 space-y-2 hidden">
+          <li><a href="bells.html" class="block hover:text-red-800 dark:hover:text-red-400">Golden Bells</a></li>
+          <li><a href="nyimbo.html" class="block hover:text-red-800 dark:hover:text-red-400">Nyimbo Standard</a></li>
+        </ul>
+      </li>
+      <li><a href="contacts.html" class="block hover:text-red-800 dark:hover:text-red-400">Contact</a></li>
+    </ul>
+  </div>
+</header>
 
-  <script>
-    // Toggle mobile menu
-    const menuToggle = document.getElementById('menu-toggle');
-    const mobileMenu = document.getElementById('mobile-menu');
+<script>
+  const menuToggle = document.getElementById('menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const overlay = document.getElementById('overlay');
+  const darkToggle = document.getElementById('dark-toggle');
+  const darkIcon = document.getElementById('dark-icon');
 
-    menuToggle.addEventListener('click', () => {
-      menuToggle.classList.toggle('open');
+  menuToggle.addEventListener('click', () => {
+    const expanded = menuToggle.getAttribute('aria-expanded') === 'true';
+    menuToggle.setAttribute('aria-expanded', !expanded);
+    menuToggle.classList.toggle('open');
+    mobileMenu.classList.toggle('-translate-x-full');
+    overlay.classList.toggle('hidden');
+    overlay.classList.toggle('opacity-100');
+  });
 
-      // Add bounce animation
-      menuToggle.classList.add('bounce');
-      setTimeout(() => menuToggle.classList.remove('bounce'), 400);
+  overlay.addEventListener('click', () => {
+    menuToggle.classList.remove('open');
+    menuToggle.setAttribute('aria-expanded', false);
+    mobileMenu.classList.add('-translate-x-full');
+    overlay.classList.add('hidden');
+    overlay.classList.remove('opacity-100');
+  });
 
-      mobileMenu.classList.toggle('hidden');
-    });
-
-    // Toggle dropdowns on mobile submenu
-    function toggleDropdown(id, btn) {
-      const submenu = document.getElementById(id);
-      const isHidden = submenu.classList.contains('hidden');
-      if (isHidden) {
-        submenu.classList.remove('hidden');
-        btn.setAttribute('aria-expanded', 'true');
-        btn.querySelector('i').classList.add('rotate-180');
-      } else {
-        submenu.classList.add('hidden');
-        btn.setAttribute('aria-expanded', 'false');
-        btn.querySelector('i').classList.remove('rotate-180');
-      }
+  darkToggle.addEventListener('click', () => {
+    document.documentElement.classList.toggle('dark');
+    if (document.documentElement.classList.contains('dark')) {
+      darkIcon.classList.remove('fa-moon');
+      darkIcon.classList.add('fa-sun');
+    } else {
+      darkIcon.classList.remove('fa-sun');
+      darkIcon.classList.add('fa-moon');
     }
-  </script>
+  });
 
+  function toggleDropdown(id) {
+    const dropdown = document.getElementById(id);
+    const icon = document.getElementById("icon-" + id);
+    const expanded = icon.getAttribute('aria-expanded') === 'true';
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>KAMA | ACK St. Faith's Church</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
-  <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="font-[Nunito Sans] bg-white text-gray-800">
+    dropdown.classList.toggle('hidden');
+    icon.classList.toggle('rotate-180');
+
+    // Update aria-expanded for accessibility
+    icon.setAttribute('aria-expanded', !expanded);
+  }
+</script>
 
   <!-- Hero Section -->
-  <section class="relative bg-cover bg-center h-[60vh] text-white flex items-center justify-center" style="background-image: url('Images/Compound.png');">
-    <div class="bg-black bg-opacity-60 absolute inset-0"></div>
+  <section class="relative bg-cover bg-center h-[60vh] text-white flex items-center justify-center dark:bg-gray-900" style="background-image: url('Images/Compound.png');">
+    <div class="bg-black bg-opacity-60 absolute inset-0 dark:bg-gray-900"></div>
     <div class="relative z-10 text-center px-6">
       <h1 class="text-4xl font-bold mb-2" data-aos="fade-up">KENYA ANGLICAN MEN'S ASSOCIATION (KAMA)</h1>
       <p class="text-lg max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="200">
@@ -206,15 +291,15 @@
   </section>
 
   <!-- Vision and Mission -->
-  <section class="py-16 bg-gray-100">
-    <div class="max-w-6xl mx-auto px-4 text-center">
+  <section class="py-16 bg-gray-100 dark:bg-gray-900">
+    <div class="max-w-6xl mx-auto px-4 text-center dark:bg-gray-900">
       <h2 class="text-3xl font-semibold mb-6" data-aos="fade-up">Our Vision & Mission</h2>
       <div class="grid md:grid-cols-2 gap-8 mt-8" data-aos="fade-up" data-aos-delay="100">
-        <div class="bg-white p-6 shadow rounded">
+        <div class="bg-white p-6 shadow rounded dark:bg-gray-900">
           <h3 class="text-xl font-semibold text-red-900 mb-2">Our Vision</h3>
           <p>A growing caring Anglican church boldly proclaiming Christ.</p>
         </div>
-        <div class="bg-white p-6 shadow rounded">
+        <div class="bg-white p-6 shadow rounded dark:bg-gray-900">
           <h3 class="text-xl font-semibold text-red-900 mb-2">Our Mission</h3>
           <p>To equip God’s people to transform the society with the gospel.</p>
         </div>
@@ -223,8 +308,8 @@
   </section>
 
   <!-- Leadership Section -->
-  <section class="py-16">
-    <div class="max-w-6xl mx-auto px-4">
+  <section class="py-16 dark:bg-gray-900">
+    <div class="max-w-6xl mx-auto px-4 dark:bg-gray-900">
       <h2 class="text-3xl font-semibold text-center mb-10" data-aos="fade-up">Leadership Team</h2>
       <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
         <div class="text-center" data-aos="zoom-in">
@@ -253,8 +338,8 @@
 
 
   <!-- History Section -->
-<section class="py-16 bg-white">
-  <div class="max-w-6xl mx-auto px-4">
+<section class="py-16 bg-white dark:bg-gray-900">
+  <div class="max-w-6xl mx-auto px-4 dark:bg-gray-900">
     <h2 class="text-3xl font-semibold text-center mb-8" data-aos="fade-up">Our History</h2>
     <div class="max-w-4xl mx-auto text-lg text-gray-700 leading-relaxed" data-aos="fade-up" data-aos-delay="100">
       <p class="mb-6">
@@ -269,25 +354,25 @@
 
 
   <!-- Ministry Highlights -->
-  <section class="py-16 bg-gray-50">
-    <div class="max-w-6xl mx-auto px-4">
+  <section class="py-16 bg-gray-50 dark:bg-gray-900">
+    <div class="max-w-6xl mx-auto px-4 dark:bg-gray-900">
       <h2 class="text-3xl font-semibold text-center mb-10" data-aos="fade-up">Ministry in Action</h2>
       <div class="grid md:grid-cols-3 gap-6">
-        <div class="bg-white shadow-lg rounded overflow-hidden" data-aos="fade-right">
+        <div class="bg-white shadow-lg rounded overflow-hidden dark:bg-gray-900" data-aos="fade-right">
           <img src="/images/event1.jpg" alt="Outreach" class="w-full h-48 object-cover">
           <div class="p-4">
             <h3 class="font-semibold text-lg mb-2">Fellowship and mentorship</h3>
             <p class="text-sm text-gray-600">To hold regular meetings for prayer, Bible Study and fellowship and to offer Biblical mentorship programs to the young adults.</p>
           </div>
         </div>
-        <div class="bg-white shadow-lg rounded overflow-hidden" data-aos="fade-up">
+        <div class="bg-white shadow-lg rounded overflow-hidden dark:bg-gray-900" data-aos="fade-up">
           <img src="/images/event2.jpg" alt="Training" class="w-full h-48 object-cover">
           <div class="p-4">
             <h3 class="font-semibold text-lg mb-2">Spiritual Growth</h3>
             <p class="text-sm text-gray-600">Bible study, prayer meetings, and spiritual mentorship for women of all ages.</p>
           </div>
         </div>
-        <div class="bg-white shadow-lg rounded overflow-hidden" data-aos="fade-left">
+        <div class="bg-white shadow-lg rounded overflow-hidden dark:bg-gray-900" data-aos="fade-left">
           <img src="/images/event3.jpg" alt="Support" class="w-full h-48 object-cover">
           <div class="p-4">
             <h3 class="font-semibold text-lg mb-2">Capacity Building</h3>
