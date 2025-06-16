@@ -1,45 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Our Modern Services | Prayer Book</title>
+<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8"/><title>Prayer Book Flipbook</title>
   <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="bg-white text-gray-800 font-sans">
-
-  <header class="bg-[#800000] text-white py-6 shadow">
-    <div class="max-w-5xl mx-auto px-4">
-      <h1 class="text-3xl font-bold">Our Modern Services</h1>
-      <p class="text-sm text-gray-200">Kenya Anglican Prayer Book (ACK 2002 Edition)</p>
+  <link rel="stylesheet" href="flipbook/dflip.min.css">
+  <script src="flipbook/dflip.min.js"></script>
+</head><body class="bg-gray-100">
+  <header class="bg-[#800000] text-white py-4 text-center">ACK Prayer Book</header>
+  <main class="px-4 py-6">
+    <div class="dflip-main" style="height:80vh;">
+      <div class="dflip-book" source="our-modern-services.pdf" id="df_book" style="width:100%;height:100%;"></div>
     </div>
-  </header>
-
-  <main class="max-w-5xl mx-auto px-4 py-8 space-y-6">
-    <p class="text-center text-gray-600 text-sm">
-      This prayer book is for use by ACK congregations and worshippers. Scroll or download the full PDF below.
-    </p>
-
-    <div class="w-full h-[90vh] border rounded-lg overflow-hidden shadow">
-      <iframe src="our-modern-services.pdf#toolbar=1"
-              class="w-full h-full"
-              frameborder="0">
-      </iframe>
-    </div>
-
-    <div class="text-center">
-      <a href="our-modern-services.pdf" download
-         class="inline-block mt-4 px-6 py-2 bg-[#800000] text-white font-semibold rounded hover:bg-[#660000]">
-        Download Prayer Book (PDF)
-      </a>
-    </div>
-
-    <div style="position:relative;padding-top:max(60%,324px);width:100%;height:0;"><iframe style="position:absolute;border:none;width:100%;height:100%;left:0;top:0;" src="https://online.fliphtml5.com/tcage/dgaz/"  seamless="seamless" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen="true" ></iframe></div>
   </main>
-
-  <footer class="bg-gray-800 text-white text-center py-4 text-sm">
-    &copy; 2025 ACK St. Faith's Church. All rights reserved.
-  </footer>
-
-</body>
-</html>
+  <footer class="text-center py-4">© 2025 ACK St. Faith's Church</footer>
+</body></html>
