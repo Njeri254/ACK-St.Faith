@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ACK St.Faith's Church</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+  <!-- AOS Animation CSS -->
+<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+    };
+  </script>
+  <style>
+    .hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background-color: #800000; /* maroon */
+      margin: 5px auto;
+      transition: all 0.4s ease-in-out;
+    }
+    .hamburger.open span:nth-child(1) {
+      transform: translateY(7px) rotate(45deg);
+    }
+    .hamburger.open span:nth-child(2) {
+      opacity: 0;
+    }
+    .hamburger.open span:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg);
+    }
+    .overlay {
+      backdrop-filter: blur(5px);
+    }
+    .rotate-180 {
+      transform: rotate(180deg);
+    }
+    #dark-toggle {
+      color: #800000; /* maroon */
+      font-size: 1.5rem;
+      cursor: pointer;
+      z-index: 60;
+    }
+  </style>
+</head>
+<body class="bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-white">
+
+<!-- Overlay -->
+<div id="overlay" class="fixed inset-0 bg-black/40 overlay z-40 hidden transition-opacity duration-300"></div>
+
+<!-- Header -->
+<header class="bg-white dark:bg-gray-800 shadow sticky top-0 z-50">
+  <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center relative">
+    <a href="index.html" class="flex items-center space-x-3">
+      <img src="Images/logo.png" alt="ACK Logo" class="h-10 w-auto" />
+      <span class="text-xl font-bold text-red-800 dark:text-red-400">ACK St. Faith's Church</span>
+    </a>
+
+    <!-- Desktop Navigation -->
+    <nav class="hidden md:flex space-x-6 font-semibold text-sm">
+      <a href="index.html" class="hover:text-red-800 dark:hover:text-red-400">Home</a>
+      <div class="relative group">
+        <button class="flex items-center gap-1 hover:text-red-800 dark:hover:text-red-400" aria-expanded="false" aria-haspopup="true">
+          About
+          <svg class="w-4 h-4 transition-transform duration-300 group-hover:rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
+        <ul class="absolute left-0 top-full mt-2 space-y-1 bg-white dark:bg-gray-700 text-black dark:text-white shadow rounded opacity-0 invisible group-hover:visible group-hover:opacity-100 transition-all duration-300 p-2 z-50">
+          <li><a href="about.html" class="block px-2 py-1 hover:bg-gray-100 dark:hover:bg-gray-600 rounded">History</a></li>
+          <li><a href="clergy.html" class="block px-2 py-1 hover:bg-gray-100 dark:hover:bg-gray-600 rounded">Leadership and Clergy</a></li>
+        </ul>
+      </div>
+      <div class="relative group">
+        <button class="flex items-center gap-1 hover:text-red-800 dark:hover:text-red-400" aria-expanded="false" aria-haspopup="true">
+          Ministries
+          <svg class="w-4 h-4 transition-transform duration-300 group-hover:rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
+        <ul class="absolute left-0 top-full mt-2 space-y-1 bg-white dark:bg-gray-700 text-black dark:text-white shadow rounded opacity-0 invisible group-hover:visible group-hover:opacity-100 transition-all duration-300 p-2 z-50">
+          <li><a href="children.html" class="block px-2 py-1 hover:bg-gray-100 dark:hover:bg-gray-600 rounded">Children and Teens</a></li>
+          <li><a href="youth.html" class="block px-2 py-1 hover:bg-gray-100 dark:hover:bg-gray-600 rounded">Youth</a></li>
+          <li><a href="choir.html" class="block px-2 py-1 hover:bg-gray-100 dark:hover:bg-gray-600 rounded">Choir and Worship Team</a></li>
+          <li><a href="mission.html" class="block px-2 py-1 hover:bg-gray-100 dark:hover:bg-gray-600 rounded">Outreach and Missions</a></li>
+          <li><a href="kama.html" class="block px-2 py-1 hover:bg-gray-100 dark:hover:bg-gray-600 rounded">KAMA</a></li>
+          <li><a href="mothers.html" class="block px-2 py-1 hover:bg-gray-100 dark:hover:bg-gray-600 rounded">Mothers' Union</a></li>
+        </ul>
+      </div>
+     
+      <div class="relative group">
+        <button class="flex items-center gap-1 hover:text-red-800 dark:hover:text-red-400" aria-expanded="false" aria-haspopup="true">
+          Get Involved
+          <svg class="w-4 h-4 transition-transform duration-300 group-hover:rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
+        <ul class="absolute left-0 top-full mt-2 space-y-1 bg-white dark:bg-gray-700 text-black dark:text-white shadow rounded opacity-0 invisible group-hover:visible group-hover:opacity-100 transition-all duration-300 p-2 z-50">
+          <li><a href="give.php" class="block px-2 py-1 hover:bg-gray-100 dark:hover:bg-gray-600 rounded">Give</a></li>
+          <li><a href="member.html" class="block px-2 py-1 hover:bg-gray-100 dark:hover:bg-gray-600 rounded">Become a Member</a></li>
+          <li><a href="ministry.html" class="block px-2 py-1 hover:bg-gray-100 dark:hover:bg-gray-600 rounded">Join a Ministry</a></li>
+          <li><a href="career.html" class="block px-2 py-1 hover:bg-gray-100 dark:hover:bg-gray-600 rounded">Career Opportunities</a></li>
+        </ul>
+      </div>
+      <a href="prayerbook.html" class="hover:text-red-800 dark:hover:text-red-400">Lirtugy</a>
+      <div class="relative group">
+        <button class="flex items-center gap-1 hover:text-red-800 dark:hover:text-red-400" aria-expanded="false" aria-haspopup="true">
+          Hymns
+          <svg class="w-4 h-4 transition-transform duration-300 group-hover:rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          </svg>  
+        </button>
+        <ul class="absolute left-0 top-full mt-2 space-y-1 bg-white dark:bg-gray-700 text-black dark:text-white shadow rounded opacity-0 invisible group-hover:visible group-hover:opacity-100 transition-all duration-300 p-2 z-50">
+          <li><a href="bells.html" class="block px-2 py-1 hover:bg-gray-100 dark:hover:bg-gray-600 rounded">Golden Bells</a></li>
+          <li><a href="nyimbo.html" class="block px-2 py-1 hover:bg-gray-100 dark:hover:bg-gray-600 rounded">Nyimbo Standard</a></li>
+        </ul>
+      </div>
+      <a href="contacts.html" class="hover:text-red-800 dark:hover:text-red-400">Contact</a>
+    </nav>
+
+    <!-- Dark mode toggle -->
+    <button id="dark-toggle" aria-label="Toggle dark mode" class="absolute right-14 top-1/2 -translate-y-1/2 md:static md:translate-y-0">
+      <i id="dark-icon" class="fas fa-moon"></i>
+    </button>
+
+    <!-- Hamburger -->
+    <div class="md:hidden z-50">
+      <button id="menu-toggle" class="hamburger focus:outline-none relative z-50" aria-label="Toggle menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="fixed top-0 left-0 w-3/4 max-w-sm h-full bg-white dark:bg-gray-800 shadow transform -translate-x-full transition-transform duration-300 z-50 p-6 space-y-4 overflow-y-auto">
+    <ul class="space-y-3 font-semibold text-sm">
+      <li><a href="index.html" class="block hover:text-red-800 dark:hover:text-red-400">Home</a></li>
+      <li>
+        <button onclick="toggleDropdown('mobile-about')" class="w-full flex justify-between items-center hover:text-red-800 dark:hover:text-red-400" aria-expanded="false" aria-controls="mobile-about">
+          <span>About</span>
+          <svg id="icon-mobile-about" class="w-4 h-4 transition-transform duration-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
+        <ul id="mobile-about" class="pl-4 mt-2 space-y-2 hidden">
+          <li><a href="about.html" class="block hover:text-red-800 dark:hover:text-red-400">History</a></li>
+          <li><a href="clergy.html" class="block hover:text-red-800 dark:hover:text-red-400">Leadership</a></li>
+        </ul>
+      </li>
+      <li>
+        <button onclick="toggleDropdown('mobile-ministries')" class="w-full flex justify-between items-center hover:text-red-800 dark:hover:text-red-400" aria-expanded="false" aria-controls="mobile-ministries">
+          <span>Ministries</span>
+          <svg id="icon-mobile-ministries" class="w-4 h-4 transition-transform duration-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
+        <ul id="mobile-ministries" class="pl-4 mt-2 space-y-2 hidden">
+          <li><a href="children.html" class="block hover:text-red-800 dark:hover:text-red-400">Children and Teens</a></li>
+          <li><a href="youth.html" class="block hover:text-red-800 dark:hover:text-red-400">Youth</a></li>
+          <li><a href="choir.html" class="block hover:text-red-800 dark:hover:text-red-400">Choir and Worship Team</a></li>
+          <li><a href="mission.html" class="block hover:text-red-800 dark:hover:text-red-400">Outreach and Missions</a></li>
+          <li><a href="kama.html" class="block hover:text-red-800 dark:hover:text-red-400">KAMA</a></li>
+          <li><a href="mothers.html" class="block hover:text-red-800 dark:hover:text-red-400">Mothers' Union</a></li>
+        </ul>
+      </li>
+      <li>
+        <button onclick="toggleDropdown('mobile-get-involved')" class="w-full flex justify-between items-center hover:text-red-800 dark:hover:text-red-400" aria-expanded="false" aria-controls="mobile-get-involved">
+          <span>Get Involved</span>
+          <svg id="icon-mobile-get-involved" class="w-4 h-4 transition-transform duration-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
+        <ul id="mobile-get-involved" class="pl-4 mt-2 space-y-2 hidden">
+          <li><a href="give.php" class="block hover:text-red-800 dark:hover:text-red-400">Give</a></li>
+          <li><a href="member.html" class="block hover:text-red-800 dark:hover:text-red-400">Become a Member</a></li>
+          <li><a href="ministry.html" class="block hover:text-red-800 dark:hover:text-red-400">Join a Ministry</a></li>
+          <li><a href="career.html" class="block hover:text-red-800 dark:hover:text-red-400">Career Opportunities</a></li>
+        </ul>
+      </li>
+      <li><a href="prayerbook.html" class="block hover:text-red-800 dark:hover:text-red-400">Lirtugy</a></li>
+      <li>
+        <button onclick="toggleDropdown('mobile-hymns')" class="w-full flex justify-between items-center hover:text-red-800 dark:hover:text-red-400" aria-expanded="false" aria-controls="mobile-hymns">
+          <span>Hymns</span>
+          <svg id="icon-mobile-hymns" class="w-4 h-4 transition-transform duration-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
+        <ul id="mobile-hymns" class="pl-4 mt-2 space-y-2 hidden">
+          <li><a href="bells.html" class="block hover:text-red-800 dark:hover:text-red-400">Golden Bells</a></li>
+          <li><a href="nyimbo.html" class="block hover:text-red-800 dark:hover:text-red-400">Nyimbo Standard</a></li>
+        </ul>
+      </li>
+      <li><a href="contacts.html" class="block hover:text-red-800 dark:hover:text-red-400">Contact</a></li>
+    </ul>
+  </div>
+</header>
+
+<script>
+  const menuToggle = document.getElementById('menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const overlay = document.getElementById('overlay');
+  const darkToggle = document.getElementById('dark-toggle');
+  const darkIcon = document.getElementById('dark-icon');
+
+  menuToggle.addEventListener('click', () => {
+    const expanded = menuToggle.getAttribute('aria-expanded') === 'true';
+    menuToggle.setAttribute('aria-expanded', !expanded);
+    menuToggle.classList.toggle('open');
+    mobileMenu.classList.toggle('-translate-x-full');
+    overlay.classList.toggle('hidden');
+    overlay.classList.toggle('opacity-100');
+  });
+
+  overlay.addEventListener('click', () => {
+    menuToggle.classList.remove('open');
+    menuToggle.setAttribute('aria-expanded', false);
+    mobileMenu.classList.add('-translate-x-full');
+    overlay.classList.add('hidden');
+    overlay.classList.remove('opacity-100');
+  });
+
+  darkToggle.addEventListener('click', () => {
+    document.documentElement.classList.toggle('dark');
+    if (document.documentElement.classList.contains('dark')) {
+      darkIcon.classList.remove('fa-moon');
+      darkIcon.classList.add('fa-sun');
+    } else {
+      darkIcon.classList.remove('fa-sun');
+      darkIcon.classList.add('fa-moon');
+    }
+  });
+
+  function toggleDropdown(id) {
+    const dropdown = document.getElementById(id);
+    const icon = document.getElementById("icon-" + id);
+    const expanded = icon.getAttribute('aria-expanded') === 'true';
+
+    dropdown.classList.toggle('hidden');
+    icon.classList.toggle('rotate-180');
+
+    // Update aria-expanded for accessibility
+    icon.setAttribute('aria-expanded', !expanded);
+  }
+</script>
+
+
+  <!-- Header Section -->
+  <section class="relative bg-cover bg-center h-72" style="background-image: url('Images/contact.jpg');">
+    <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+    <div class="relative z-10 flex items-center justify-center h-full">
+      <h1 class="text-4xl md:text-5xl font-bold text-white" data-aos="fade-down">Contact Us</h1>
+    </div>
+  </section>
+
+  <!-- Contact Info and Form -->
+  <section class="py-12 bg-gray-50">
+    <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12">
+
+      <!-- Contact Details -->
+      <div data-aos="fade-right">
+        <h2 class="text-2xl text-red-900 font-semibold mb-4">Get in Touch</h2>
+        <p class="mb-6 text-gray-700">We’d love to hear from you! Whether you have questions, need prayer, or want to join a ministry, our doors are open.</p>
+
+        <ul class="space-y-4 text-gray-700">
+          <li><strong>Address:</strong> P.O.BOX 388-00511</li>
+          <li><strong>Phone:</strong> +254 721 347 357</li>
+          <li><strong>Email:</strong> info@ackstfaith.org</li>
+        </ul>
+
+        <h3 class="mt-8 text-xl text-red-900 font-semibold mb-2">Office Hours</h3>
+        <p class="text-gray-700">Tuesday – Friday: 9 AM – 5 PM<br /></p>
+      </div>
+
+      <!-- Contact Form -->
+      <div data-aos="fade-left">
+        <form class="bg-white p-6 rounded shadow space-y-4">
+          <div>
+            <label class="block text-gray-700">Name</label>
+            <input type="text" name="name" class="w-full mt-1 p-2 border rounded" placeholder="Your name" required>
+          </div>
+          <div>
+            <label class="block text-gray-700">Email</label>
+            <input type="email" name="email" class="w-full mt-1 p-2 border rounded" placeholder="you@example.com" required>
+          </div>
+          <div>
+            <label class="block text-gray-700">Subject</label>
+            <input type="text" name="subject" class="w-full mt-1 p-2 border rounded" placeholder="Subject" required>
+          </div>
+          <div>
+            <label class="block text-gray-700">Message</label>
+            <textarea name="message" rows="6" class="w-full mt-1 p-2 border rounded" placeholder="Write your message..." required></textarea>
+          </div>
+          <button type="submit" class="w-full bg-maroon-700 text-white py-2 rounded hover:bg-maroon-800 transition">Send Message</button>
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Map & Social Links -->
+  <section class="py-12">
+    <div class="max-w-6xl mx-auto px-6 text-center">
+
+      <h2 class="text-2xl font-semibold mb-6" data-aos="fade-up">Find Us On The Map</h2>
+      <!-- Placeholder Google Map iframe -->
+      <div class="border rounded overflow-hidden mb-8" data-aos="fade-up" data-aos-delay="100">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6699.664858245483!2d36.75793380000001!3d-1.393894899999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f05c3d60a02e3%3A0xd0177953f34bbf00!2sSt.Faith&#39;s%20Ack%20Ongata%20Rongai!5e1!3m2!1sen!2ske!4v1750251604091!5m2!1sen!2ske"
+          width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy">
+        </iframe>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+<footer class="bg-red-800 text-white mt-16 dark:bg-gray-900 dark:text-gray-300">
+  <div class="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-4 gap-8">
+
+    <!-- Logo & Mission -->
+    <div>
+      <img src="Images/logo.png" alt="Church Logo" class="h-12 mb-4">
+      <p class="text-sm leading-relaxed">
+        ACK St. Faith's Church is committed to spreading the Gospel, building strong Christian families, and serving the community with love and truth.
+      </p>
+    </div>
+
+    <!-- Quick Links -->
+    <div>
+      <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+      <ul class="space-y-2 text-sm">
+        <li><a href="#" class="hover:underline hover:text-red-800 transition">Home</a></li>
+        <li><a href="#" class="hover:underline hover:text-red-800 transition">About Us</a></li>
+        <li><a href="#" class="hover:underline hover:text-red-800 transition">Ministries</a></li>
+        <li><a href="#" class="hover:underline hover:text-red-800 transition">Events</a></li>
+        <li><a href="#" class="hover:underline hover:text-red-800 transition">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- Contact Info -->
+    <div>
+      <h4 class="text-lg font-semibold mb-4">Contact Us</h4>
+      <ul class="space-y-2 text-sm">
+        <li><i class="fas fa-map-marker-alt mr-2 text-green-400"></i> P.O. Box 388-00511, Kenya</li>
+        <li><i class="fas fa-phone mr-2 text-green-400"></i> +254 721 347 357</li>
+        <li><i class="fas fa-envelope mr-2 text-green-400"></i> info@ackstfaith.org</li>
+      </ul>
+    </div>
+
+    <!-- Social Media -->
+    <div>
+      <h4 class="text-lg font-semibold mb-4">Follow Us</h4>
+      <div class="flex space-x-4 text-xl">
+        <a href="#" class="hover:text-red-800 transition"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="hover:text-red-800 transition"><i class="fab fa-twitter"></i></a>
+        <a href="#" class="hover:text-red-800 transition"><i class="fab fa-youtube"></i></a>
+        <a href="#" class="hover:text-red-800 transition"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Bottom Bar -->
+  <div class="bg-red-800 text-center text-sm py-4 dark:bg-gray-900">
+    <p>&copy; 2025 ACK St. Faith's Church. All rights reserved.</p>
+  </div>
+</footer>
+
+
+<!-- AOS Animation JS -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 1000, offset: 120 });
+  </script>
+
+</body>
+</html>
