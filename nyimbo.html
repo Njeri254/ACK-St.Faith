@@ -272,7 +272,7 @@
     let hymns = [];
 
     async function loadHymns() {
-      const res = await fetch('hymns.json'); // Update to your correct path
+      const res = await fetch('nyimbo.json'); // Update to your correct path
       hymns = await res.json();
       displayHymns(hymns);
     }
