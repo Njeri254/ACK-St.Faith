@@ -250,34 +250,46 @@
   }
 </script>
 
-<section class="relative w-full overflow-hidden dark:bg-gray-900" id="slider">
+  <section class="relative w-full overflow-hidden dark:bg-gray-900" id="slider">
   <div class="relative h-[400px] sm:h-[500px] md:h-[600px]">
+    <!-- Slide 1 -->
     <div class="absolute inset-0 w-full h-full transition-opacity duration-1000 ease-in-out opacity-100 slide active">
       <img src="Images/Compound.png" class="w-full h-full object-cover" />
-      <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
-        <h2 data-aos="fade-up" data-aos-delay="200" class="text-white text-3xl md:text-5xl font-bold">Welcome to ACK St. Faith's Church</h2>
-        <p text-lg md:text-xl text-gray-700 leading-relaxed>“A Christ-centered community where everyone belongs.”</p>
+      <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center text-center px-4">
+        <div class="text-white">
+          <h2 class="text-3xl md:text-5xl font-bold mb-4" data-heading></h2>
+          <p class="text-lg md:text-xl text-gray-200" data-paragraph></p>
+        </div>
       </div>
     </div>
+    <!-- Slide 2 -->
     <div class="absolute inset-0 w-full h-full transition-opacity duration-1000 ease-in-out opacity-0 slide">
       <img src="Images/Brigade2.jpg" class="w-full h-full object-cover" />
-      <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
-        <h2 data-aos="fade-left" data-aos-delay="200" class="text-white text-3xl md:text-5xl font-bold">Experience God's Love</h2>
-        <p class="text-lg md:text-xl text-gray-700 leading-relaxed">“Join us every Sunday as we worship, learn, and serve in love.”</p>
+      <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center text-center px-4">
+        <div class="text-white">
+          <h2 class="text-3xl md:text-5xl font-bold mb-4" data-heading></h2>
+          <p class="text-lg md:text-xl text-gray-200" data-paragraph></p>
+        </div>
       </div>
     </div>
+    <!-- Slide 3 -->
     <div class="absolute inset-0 w-full h-full transition-opacity duration-1000 ease-in-out opacity-0 slide">
-      <img src="Images/Mission - saitoti.jpeg" class="w-full h-full object-cover" />
-      <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
-        <h2 data-aos="fade-down" data-aos-delay="200" class="text-white text-3xl md:text-5xl font-bold">Outreach & Missions</h2>
-        <p class="text-lg md:text-xl text-gray-700 leading-relaxed">“Extending God’s love beyond our walls to the world around us.”</p>
+      <img src="Images/Mission%20-%20saitoti.jpeg" class="w-full h-full object-cover" />
+      <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center text-center px-4">
+        <div class="text-white">
+          <h2 class="text-3xl md:text-5xl font-bold mb-4" data-heading></h2>
+          <p class="text-lg md:text-xl text-gray-200" data-paragraph></p>
+        </div>
       </div>
     </div>
+    <!-- Slide 4 -->
     <div class="absolute inset-0 w-full h-full transition-opacity duration-1000 ease-in-out opacity-0 slide">
-      <img src="Images/Clergy.jpg" class="w-full h-full object-cover" />
-      <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
-        <h2 data-aos="fade-down" data-aos-delay="200" class="text-white text-3xl md:text-5xl font-bold">You Matter to God — and to Us</h2>
-        <p class="text-lg md:text-xl text-gray-700 leading-relaxed">“Come as you are. Leave renewed.”</p>
+      <img src="Images/clergy.jpg" class="w-full h-full object-cover" />
+      <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center text-center px-4">
+        <div class="text-white">
+          <h2 class="text-3xl md:text-5xl font-bold mb-4" data-heading></h2>
+          <p class="text-lg md:text-xl text-gray-200" data-paragraph></p>
+        </div>
       </div>
     </div>
   </div>
@@ -295,6 +307,7 @@
     <button class="w-3 h-3 rounded-full bg-white opacity-50 hover:opacity-100 transition" data-slide="0"></button>
     <button class="w-3 h-3 rounded-full bg-white opacity-50 hover:opacity-100 transition" data-slide="1"></button>
     <button class="w-3 h-3 rounded-full bg-white opacity-50 hover:opacity-100 transition" data-slide="2"></button>
+    <button class="w-3 h-3 rounded-full bg-white opacity-50 hover:opacity-100 transition" data-slide="3"></button>
   </div>
 </section>
 
@@ -302,7 +315,41 @@
   const slides = document.querySelectorAll('.slide');
   const dots = document.querySelectorAll('[data-slide]');
   let current = 0;
-  let interval = setInterval(nextSlide, 5000); // Autoplay every 5 seconds
+  let interval = setInterval(nextSlide, 8000); // Autoplay every 8s
+
+  const captions = [
+    {
+      heading: "Welcome to ACK St. Faith's Church",
+      paragraph: "A Christ-centered community where everyone belongs."
+    },
+    {
+      heading: "Experience God's Love",
+      paragraph: "Join us every Sunday as we worship, learn, and serve in love."
+    },
+    {
+      heading: "Outreach & Missions",
+      paragraph: "Extending God’s love beyond our walls to the world around us."
+    },
+    {
+      heading: "You Matter to God — and to Us",
+      paragraph: "Come as you are. Leave renewed."
+    }
+  ];
+
+  function typeText(el, text, delay = 30, callback) {
+    el.textContent = "";
+    let i = 0;
+    function type() {
+      if (i < text.length) {
+        el.textContent += text.charAt(i);
+        i++;
+        setTimeout(type, delay);
+      } else if (callback) {
+        callback();
+      }
+    }
+    type();
+  }
 
   function showSlide(index) {
     slides.forEach((slide, i) => {
@@ -312,8 +359,20 @@
       slide.classList.toggle('z-10', i === index);
       slide.classList.toggle('active', i === index);
     });
+
     dots.forEach(dot => dot.classList.remove('opacity-100'));
     if (dots[index]) dots[index].classList.add('opacity-100');
+
+    const activeSlide = slides[index];
+    const h2 = activeSlide.querySelector('[data-heading]');
+    const p = activeSlide.querySelector('[data-paragraph]');
+
+    if (h2 && p) {
+      typeText(h2, captions[index].heading, 50, () => {
+        typeText(p, captions[index].paragraph, 30);
+      });
+    }
+
     current = index;
   }
 
@@ -329,6 +388,7 @@
     nextSlide();
     resetAutoplay();
   });
+
   document.getElementById('prevBtn').addEventListener('click', () => {
     prevSlide();
     resetAutoplay();
@@ -343,12 +403,37 @@
 
   function resetAutoplay() {
     clearInterval(interval);
-    interval = setInterval(nextSlide, 5000);
+    interval = setInterval(nextSlide, 8000);
   }
 
-  // Initialize
-  showSlide(0);
+  // Swipe Support for Mobile
+  let touchStartX = 0;
+  let touchEndX = 0;
+  const slider = document.getElementById('slider');
+
+  slider.addEventListener('touchstart', (e) => {
+    touchStartX = e.changedTouches[0].screenX;
+  });
+
+  slider.addEventListener('touchend', (e) => {
+    touchEndX = e.changedTouches[0].screenX;
+    handleGesture();
+  });
+
+  function handleGesture() {
+    if (touchEndX < touchStartX - 50) {
+      nextSlide();
+      resetAutoplay();
+    }
+    if (touchEndX > touchStartX + 50) {
+      prevSlide();
+      resetAutoplay();
+    }
+  }
+
+  showSlide(0); // Initial call
 </script>
+
 
 
 <!-- Theme Section -->
