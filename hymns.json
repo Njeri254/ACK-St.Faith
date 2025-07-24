@@ -26,6 +26,11 @@
   "lyrics": "1. Kama anavyotamani\nMaji mwenye kiu,\nNdivyo ilivyo rohoni\nTamaa ya wokovu.\n\n2. Uliye hai ni kwako\nRoho ina kiu;\nHata lini uso wako\nUtafichwa kwangu?\n\n3. Kwa nini, moyo kuzima?\nTumaini kwake;\nUnywe maji ya uzima,\nWimbe sifa zake."
 },
   {
+  "number": 125,
+  "title": "Atakaye na Aje",
+  "lyrics": "Anisikiaye, aliye yote;\nSasa litangae, wajue wote,\nDuniani kote neno wapate,\nAtakaye na aje!\n\nNi 'Atakaye', ni 'Atakaye',\nPwani hata bara, na litangae;\nNi Baba Mpenzi alinganaye\nAtakaye na aje.\n\nAnijiliaye, Yesu asema,\nAsikawe, aje hima mapema;\nNdimi njia, kweli, ndimi uzima;\nAtakaye na aje!\n\nAtakaye aje, ndivyo ahadi;\nAtakaye hiyo, haitarudi!\nAtakaye lake, ni la abadi!\nAtakaye na aje."
+},
+  {
   "number": 135,
   "title": "Msalabani Pa Mwokozi",
   "lyrics": "Msalabani pa Mwokozi hapo niliomba upozi\nAkaniokoa mpenzi, Mwana wa MUNGU\n\nMwana wa MUNGU, Mwokozi wangu,\nAkaniokoa mpenzi, Mwana wa MUNGU\n\nChini ya mti msumbufu, niliomba utakatifu\nAlinikomboa kwa damu, Mwana wa MUNGU\n\nAliniokoa dhambini, Ikawa kunikaa ndani\nAliponifia mtini, Mwana wa MUNGU;\n\nDamu ya YESU ya thamani, huniokoa makosani\nHuniendesha wokovuni, Mwana wa MUNGU\n\nHicho kijito cha gharama, leo jivike kwa kuzama,\nKwake uuone uzima, Mwana wa MUNGU."
@@ -112,7 +117,7 @@
 },
   {
   "number": 431,
-  "title": "Bwana Wambingu na Nchi",
+  "title": "Bwana Wa mbingu na Nchi",
   "lyrics": "1. Bwana wambingu na nchi,\nTwakwinulia sauti;\nWatoto wako huachi\nKuwalisha.\n\n2. Kwa hii nuru ya jua,\nMatunda mema, maua;\nKwa mavuno twatambua\nWema wako.\n\n3. Kwa nyumba zenye salama,\nKwa afya na uzima\nNa neema zote njema,\nTwakusifu.\n\n4. Mwanao umemtoa\nKuja kwetu kutufia;\nTena naye vyote pia\nUmetupa."
 },
   {
@@ -134,6 +139,16 @@
   "number": 509,
   "title": "Enyi Mkaao Nchi",
   "lyrics": "1. Enyi mkaao nchi,\nMwimbieni Mungu sana,\nMsifuni kwa sauti,\nMbele zake mwakutana.\n\n2. Mungu mwajua, kwani,\nAliyetuumba ndiye,\nAtuchunga malishoni,\nNa tu kundi lake Yeye.\n\n3. Haya malangoni Mwake,\nHata njiani imbeni,\nMulikuze Jina lake,\nJina la Bwana si duni.\n\n4. Bwana, Yehova ni mwema,\nAna rehema milele,\nKweli yake yasimama,\nLeo na kesho vivile."
+},
+{
+  "number": 517,
+  "title": "Na Tumwabudu Huyo Mfalme",
+  "lyrics": "1. Na tumwabudu huyo Mfalme,\nSifa za nguvu zake zivume,\nNi ngao, ni ngome, yeye milele,\nNdizo sifa zake kale na kale.\n\n2. Hubirini ya uweza wake\nMkaziimbe neema zake;\nGari yake ndiyo mawingu nayo\nNuru ni mavazi ayavaayo.\n\n3. Tazameni ulimwengu huu\nUlivyoumbwa, ajabu kuu;\nSasa umewekwa mahali pake,\nHata utimize majira yake.\n\n4. Kwa ulinzi wako, kwetu\nBwana, twakushukuru,\nU mwema sana; huwapachakula\nKila kiumbe, kila kitu kina\nMahali pake.\n\n5. Wanadamu tu wanyonge sana,\nTwakutumaini Wewe, Bwana;\nKamwe haupungui Wako wema,\nMkombozi wetu, Rafiki mwema.\n\n6. Uweza wako haupimiki,\nMapenzi yako hayasemeki;\nNa ulivyoumba vyote kabisa,\nVidogo, vikubwa, vyakutukuza."
+},
+  {
+  "number": 518,
+  "title": "Na Tumsifu Bwana",
+  "lyrics": "1. Na tumsifu Bwana,\nKwani ni mwema sana;\nMapenzi na rehema,\nHuwa vivyo daima.\n\n2. Aliitoa amri,\nNuru zikanawiri;\n\n3. Jua lake hung'ara,\nKote pwani na bara;\n\n4. Aliufanya mwezi,\nNa nyota nyingi hizi;\n\n5. Hulisha vilivyo hai,\nHata vikakinai;\n\n6. Na tumsifu Mungu,\nNyimbo za sifa kuu;"
 },
   {
   "number": 528,
