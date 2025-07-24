@@ -1,6 +1,23 @@
-<iframe 
-  src="our-modern-services-compressed.pdf" 
-  width="100%" 
-  height="700px" 
-  style="border:none;">
-</iframe>
+<main class="py-4 px-4">
+  <h2 class="text-xl font-semibold mb-4">📘 Our Modern Services</h2>
+
+  <!-- Embed PDF -->
+  <div style="width: 100%; max-width: 100%; height: 90vh;">
+    <embed 
+      src="our-modern-services-compressed.pdf#toolbar=1&navpanes=0&scrollbar=1" 
+      type="application/pdf" 
+      width="100%" 
+      height="100%" 
+      style="border: none;" />
+  </div>
+
+  <!-- Fallback for devices where PDF embed fails -->
+  <div class="mt-4 text-center">
+    <p class="text-sm mb-2">Having trouble viewing? You can download it below:</p>
+    <a href="our-modern-services-compressed.pdf" 
+       class="bg-[#800000] text-white px-4 py-2 rounded shadow hover:bg-red-700 inline-block" 
+       download>
+       ⬇️ Download PDF
+    </a>
+  </div>
+</main>
