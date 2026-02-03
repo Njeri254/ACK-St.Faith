@@ -664,6 +664,28 @@
   </div>
 </section>
 
+
+  <script>
+fetch('/content/announcements.json')
+  .then(res => res.json())
+  .then(data => {
+    const container = document.getElementById('announcements');
+    data.filter(a => a.published).sort((a,b) => new Date(a.event_date) - new Date(b.event_date)).forEach(a => {
+      container.innerHTML += `
+        <div class="bg-gray-100 p-6 rounded-2xl shadow">
+          <p class="text-maroon-700 text-sm font-semibold">${a.date_label}</p>
+          <h3 class="text-xl font-semibold text-gray-700 mt-2">${a.title}</h3>
+          <p class="mt-2 text-gray-700">${a.excerpt}</p>
+        </div>
+      `;
+    });
+  });
+</script>
+
+<div id="announcements" class="grid gap-6 md:grid-cols-2 lg:grid-cols-3"></div>
+
+
+  
 <section class="bg-white py-12 px-4 sm:px-6 lg:px-8 dark:bg-gray-900">
   <div class="max-w-7xl mx-auto dark:bg-gray-900">
     <h2 class="text-3xl font-bold text-gray-800 mb-8 border-l-4 border-maroon-700 pl-4">Key Announcements</h2>
@@ -795,6 +817,7 @@
 
 </body>
 </html>
+
 
 
 
