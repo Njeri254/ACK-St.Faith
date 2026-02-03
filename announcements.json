@@ -1,18 +1,38 @@
 [
   {
-    "title": "Baptism (Kiswahili Service)",
-    "date_label": "August 24th, 2025",
-    "event_date": "2025-08-24",
-    "excerpt": "Parents who wish to have their children baptised are kindly asked to pick registration forms from the church office.",
-    "content": "Baptism classes will be conducted every Saturday at 10am. Kindly register early.",
+    "title": "Confirmation Classes",
+    "date_label": "February 1st, 2026",
+    "event_date": "2026-02-01",
+    "excerpt": "Confirmation classes will begin on 1st February 2026, for Registration see Peoples warden/ call office line 0721 347357",
+    "content": " We kindly encourage adults that are yet to be confirmed to take advantage of this opportunity",
     "published": true
   },
   {
-    "title": "Mother's Union Conference",
-    "date_label": "August 20–23, 2025",
-    "event_date": "2025-08-20",
-    "excerpt": "All ladies are invited to register for a seminar to strengthen their fellowships.",
+    "title": " New Year Dedication and Prayers",
+    "date_label": "February 27–28, 2025",
+    "event_date": "2025-02-28",
+    "excerpt": "Please note the change in dates. The Bishop of Kajiado Diocese Rt. Rev. Dr. Gaddiel Lenini, will be visiting Ongata Rongai Archdeaconry",
     "content": "Full program details here...",
+    "published": true
+  },
+  {
+    "title": "Five day prayer and fasting",
+    "date_label": "February 2 -6, 2026",
+    "event_date": "2026-02-02",
+    "excerpt": "We will be observing a five-day Prayer and Fasting every first week of the month",
+    "content": "We will be observing a five-day Prayer and Fasting every first week of the month",
+    "published": true
+  },
+  {
+    "title": "Family Dinner",
+    "date_label": "February 14th, 2026",
+    "event_date": "2026-02-14",
+    "excerpt": "On 14th February,  we warmly invite you to a Family Dinner themed ",
+    "content": "One Family in Christ, One Table of Love”, from 5:30 p.m. to 7:30 p.m. All are welcome to attend (18+). The evening will include the blessing of marriages, wedding rings, and prayers over relationships.
+To crown the event, we shall also be launching a Mass Wedding.
+Valentines Committee to meet today after the English Service at the Youth Sanctuary.",
     "published": true
   }
 ]
+
+
