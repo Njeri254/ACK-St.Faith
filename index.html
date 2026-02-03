@@ -595,7 +595,7 @@
           <tr><td class="px-4 py-2 border-b">Friday</td><td class="px-4 py-2 border-b">Kesha</td><td class="px-4 py-2 border-b">(Every Last Friday of every month)</td></tr>
           <tr><td class="px-4 py-2 border-b">Saturday</td><td class="px-4 py-2 border-b">Men's Fellowship</td><td class="px-4 py-2 border-b">7:00am - 9:00am</td></tr>
           <tr><td class="px-4 py-2 border-b">Saturday</td><td class="px-4 py-2 border-b">Choir Practice</td><td class="px-4 py-2 border-b">3:30pm - 6:00pm</td></tr>
-          <tr><td class="px-4 py-2 border-b">Saturday</td><td class="px-4 py-2 border-b">Praise and Worship Practice</td><td class="px-4 py-2 border-b">3:30pm - 6:00pm</td></tr>
+          <tr><td class="px-4 py-2 border-b">Saturday</td><td class="px-4 py-2 border-b">Praise and Worship Practice</td><td class="px-4 py-2 border-b">1:00pm - 4:00pm</td></tr>
           <tr><td class="px-4 py-2 border-b">Saturday</td><td class="px-4 py-2 border-b">Confirmation and Adult Baptism Clesses</td><td class="px-4 py-2 border-b">2:00pm - 4:00pm</td></tr>
           <tr><td class="px-4 py-2 border-b">Sunday</td><td class="px-4 py-2 border-b">TEE Classes</td><td class="px-4 py-2 border-b">7:00am - 8:45am</td></tr>
         </tbody>
@@ -655,7 +655,7 @@
     </div>
 
     <!-- Optional Watch Button -->
-    <div class="mt-6 dark:bg-gray-900">
+    <div class="mt-6 dark:bg-gray-500">
       <a href="https://www.youtube.com/embed/mTNNLIX6pZE?si=_djsmEHldSSDc6Vo" target="_blank"
         class="inline-block bg-maroon-700 text-black font-semibold px-6 py-2 rounded transition duration-300">
         Watch on YouTube
@@ -673,7 +673,7 @@ fetch('announcements.json')
     data.filter(a => a.published).sort((a,b) => new Date(a.event_date) - new Date(b.event_date)).forEach(a => {
       container.innerHTML += `
         <div class="bg-gray-100 p-6 rounded-2xl shadow">
-          <p class="text-maroon-700 text-sm font-semibold">${a.date_label}</p>
+          <p class="text-gray-900 text-sm font-semibold">${a.date_label}</p>
           <h3 class="text-xl font-semibold text-gray-700 mt-2">${a.title}</h3>
           <p class="mt-2 text-gray-700">${a.excerpt}</p>
         </div>
@@ -778,6 +778,7 @@ fetch('announcements.json')
 
 </body>
 </html>
+
 
 
 
