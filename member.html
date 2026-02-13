@@ -261,7 +261,7 @@
 </section>
 
 <!-- member.html -->
-<form action="process-member.php" method="POST" class="max-w-xl mx-auto bg-white p-6 rounded shadow dark:bg-gray-900">
+<form action="membershipForm" method="POST" class="max-w-xl mx-auto bg-white p-6 rounded shadow dark:bg-gray-900">
   <h2 class="text-2xl font-bold mb-4 text-center text-maroon-700">Church Membership Form</h2>
 
   <label class="block mb-2">Full Name</label>
@@ -396,7 +396,7 @@
 
   <!-- Bottom Bar -->
   <div class="bg-red-800 text-center text-sm py-4 dark:bg-gray-900">
-    <p>&copy; 2025 ACK St. Faith's Church. All rights reserved.</p>
+    <p>&copy; 2026 ACK St. Faith's Church. All rights reserved.</p>
   </div>
 </footer>
 
@@ -407,6 +407,37 @@
   AOS.init({
     duration: 1000,
     once: true,
+  });
+</script>
+
+<script>
+  const form = document.getElementById('membershipForm');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault(); // prevent normal form submit
+
+    const formData = new FormData(form);
+    const data = Object.fromEntries(formData.entries());
+
+    try {
+      const res = await fetch('/api/member', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+      });
+
+      const result = await res.json();
+
+      if (result.success) {
+        alert('Your form has been submitted successfully!');
+        form.reset();
+      } else {
+        alert('Error: ' + (result.error || 'Unknown error'));
+      }
+    } catch (err) {
+      alert('Failed to submit form. Please try again.');
+      console.error(err);
+    }
   });
 </script>
 
