@@ -261,89 +261,58 @@
 </section>
 
 <!-- member.html -->
-<form action="membershipForm" method="POST" class="max-w-xl mx-auto bg-white p-6 rounded shadow dark:bg-gray-900">
-  <h2 class="text-2xl font-bold mb-4 text-center text-maroon-700">Church Membership Form</h2>
+<form id="membershipForm" class="max-w-xl mx-auto bg-white p-6 rounded shadow dark:bg-gray-900 mt-8">
+  <h2 class="text-2xl font-bold mb-6 text-center text-maroon-700">Church Membership Form</h2>
 
   <label class="block mb-2">Full Name</label>
-  <input type="text" name="name" required class="w-full p-2 border rounded mb-4"/>
+  <input type="text" name="name" required class="w-full p-2 border rounded mb-4" />
 
   <label class="block mb-2">Email</label>
-  <input type="email" name="email" required class="w-full p-2 border rounded mb-4"/>
+  <input type="email" name="email" required class="w-full p-2 border rounded mb-4" />
 
   <label class="block mb-2">Phone</label>
-  <input type="tel" name="phone" required class="w-full p-2 border rounded mb-4"/>
+  <input type="tel" name="phone" required class="w-full p-2 border rounded mb-4" />
 
   <label class="block mb-2">Date of Birth</label>
-  <input type="date" name="dob" required class="w-full p-2 border rounded mb-4"/>
+  <input type="date" name="dob" required class="w-full p-2 border rounded mb-4" />
 
-  <label class="block mb-2">Reason to join...</label>
+  <label class="block mb-2">Reason to Join</label>
   <textarea name="message" rows="4" required class="w-full p-2 border rounded mb-4"></textarea>
 
-    <label class="block mb-2">Are you saved??</label>
-    <label class="inline-flex items-center">
-      <input type="radio" name="saved" value="Yes" required
-             class="form-radio text-maroon-700 focus:ring-maroon-700">
-      <span class="ml-2">Yes</span>
-    </label>
-    <label class="inline-flex items-center">
-      <input type="radio" name="saved" value="No" required
-             class="form-radio text-maroon-700 focus:ring-maroon-700">
-      <span class="ml-2">No</span>
-    </label>
+  <label class="block mb-2">Are you saved?</label>
+  <div class="flex gap-4 mb-4">
+    <label><input type="radio" name="saved" value="Yes" required /> Yes</label>
+    <label><input type="radio" name="saved" value="No" required /> No</label>
+  </div>
 
-  
   <label class="block mb-2">Have you been baptized?</label>
-    <label class="inline-flex items-center">
-      <input type="radio" name="baptized" value="Yes" required
-             class="form-radio text-maroon-700 focus:ring-maroon-700">
-      <span class="ml-2">Yes</span>
-    </label>
-    <label class="inline-flex items-center">
-      <input type="radio" name="baptized" value="No" required
-             class="form-radio text-maroon-700 focus:ring-maroon-700">
-      <span class="ml-2">No</span>
-    </label>
+  <div class="flex gap-4 mb-4">
+    <label><input type="radio" name="baptized" value="Yes" required /> Yes</label>
+    <label><input type="radio" name="baptized" value="No" required /> No</label>
+  </div>
 
-      <label class="block mb-2">Have you been confirmed?</label>
-    <label class="inline-flex items-center">
-      <input type="radio" name="confirmed" value="Yes" required
-             class="form-radio text-maroon-700 focus:ring-maroon-700">
-      <span class="ml-2">Yes</span>
-    </label>
-    <label class="inline-flex items-center">
-      <input type="radio" name="confirmed" value="No" required
-             class="form-radio text-maroon-700 focus:ring-maroon-700">
-      <span class="ml-2">No</span>
-    </label>
-  
-  
-<br><br><br>
+  <label class="block mb-2">Have you been confirmed?</label>
+  <div class="flex gap-4 mb-4">
+    <label><input type="radio" name="confirmed" value="Yes" required /> Yes</label>
+    <label><input type="radio" name="confirmed" value="No" required /> No</label>
+  </div>
 
-<section class="bg-gray-100 dark:bg-gray-800 py-12 px-6 md:px-16 text-center" data-aos="fade-up">
-  <h2 class="text-3xl font-bold text-maroon-700 mb-4">Join a Ministry</h2>
-  <p class="text-gray-700 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
-    God has gifted each of us uniquely for the building up of His Church. At ACK St. Faith’s Church, we encourage every member to actively serve through a ministry that aligns with their talents and calling.
-  </p>
-  <p class="mt-4 text-gray-700 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
-    Please use the form below to express your interest. A ministry leader will contact you with more information on how to get involved.
-  </p>
-  <label class="block mb-2">Preferred Ministry to Join</label>
-  <select name="ministry" class="w-full p-2 border rounded mb-4 dark:bg-gray-800 dark:text-gray-300">
+  <label class="block mb-2">Preferred Ministry</label>
+  <select name="ministry" class="w-full p-2 border rounded mb-6">
     <option value="Children and Teens">Children and Teens</option>
     <option value="Youth">Youth</option>
     <option value="Choir and Worship Team">Choir and Worship Team</option>
     <option value="Outreach and Missions">Outreach and Missions</option>
     <option value="KAMA">KAMA</option>
     <option value="Mothers' Union">Mothers' Union</option>
-    <option value="other">Other</option>
+    <option value="Other">Other</option>
   </select>
-</section>
-<br>
- <button type="submit" class="bg-red-700 hover:bg-red-800 text-white font-semibold py-2 px-6 rounded-lg transition duration-300">
-  Submit
-</button>
 
+  <button type="submit" class="bg-red-700 hover:bg-red-800 text-white font-semibold py-2 px-6 rounded-lg w-full transition">
+    Submit
+  </button>
 </form>
+
 
 
 
@@ -411,35 +380,35 @@
 </script>
 
 <script>
-  const form = document.getElementById('membershipForm');
+const form = document.getElementById('membershipForm');
 
-  form.addEventListener('submit', async (e) => {
-    e.preventDefault(); // prevent normal form submit
+form.addEventListener('submit', async (e) => {
+  e.preventDefault();
 
-    const formData = new FormData(form);
-    const data = Object.fromEntries(formData.entries());
+  const data = Object.fromEntries(new FormData(form).entries());
 
-    try {
-      const res = await fetch('/api/member', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data)
-      });
+  try {
+    const res = await fetch('/api/member', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data)
+    });
 
-      const result = await res.json();
+    const result = await res.json();
 
-      if (result.success) {
-        alert('Your form has been submitted successfully!');
-        form.reset();
-      } else {
-        alert('Error: ' + (result.error || 'Unknown error'));
-      }
-    } catch (err) {
-      alert('Failed to submit form. Please try again.');
-      console.error(err);
+    if (result.success) {
+      alert('Form submitted successfully!');
+      form.reset();
+    } else {
+      alert('Error: ' + (result.error || 'Unknown error'));
     }
-  });
+  } catch (err) {
+    console.error(err);
+    alert('Failed to submit form. Try again.');
+  }
+});
 </script>
+
 
 </body>
 </html>
