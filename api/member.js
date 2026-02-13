@@ -18,8 +18,8 @@ export default async function handler(req, res) {
   });
 
   const mailOptions = {
-    from: `"${name}" <${email}>`,
-    to: process.env.EMAIL_USER, // emails sent to yourself
+    from: process.env.EMAIL_USER,
+    replyTo: email, // emails sent to yourself
     subject: `New Membership Form Submission from ${name}`,
     text: `
 Name: ${name}
@@ -45,3 +45,4 @@ ${message}
   }
 }
 v
+
