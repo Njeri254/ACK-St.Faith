@@ -7,20 +7,19 @@ export default async function handler(req, res) {
 
   if (!name || !email || !message) return res.status(400).json({ error: 'Missing required fields' });
 
-  // Create transporter
   const transporter = nodemailer.createTransport({
     host: 'smtp.gmail.com',
     port: 465,
     secure: true,
     auth: {
-      user: process.env.EMAIL_USER,   // Gmail
-      pass: process.env.EMAIL_PASS    // Gmail App Password
+      user: process.env.EMAIL_USER,
+      pass: process.env.EMAIL_PASS
     }
   });
 
   const mailOptions = {
     from: `"${name}" <${email}>`,
-    to: process.env.EMAIL_USER, // receive emails here
+    to: process.env.EMAIL_USER, // emails sent to yourself
     subject: `New Membership Form Submission from ${name}`,
     text: `
 Name: ${name}
@@ -45,3 +44,4 @@ ${message}
     return res.status(500).json({ error: 'Failed to send email.' });
   }
 }
+v
