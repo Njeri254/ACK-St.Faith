@@ -261,46 +261,50 @@
 </section>
 
 <!-- member.html -->
-  
 <form id="membershipForm" class="max-w-xl mx-auto bg-white p-6 rounded shadow dark:bg-gray-900 mt-8">
   <h2 class="text-2xl font-bold mb-6 text-center text-maroon-700">Church Membership Form</h2>
 
-  <label class="block mb-2">Full Name</label>
-  <input type="text" name="name" requiredclass="w-full p-2 border rounded mb-4 bg-white text-gray-900 dark:bg-gray-700 dark:text-white border-gray-300 dark:border-gray-600" />
+  <label class="block mb-2 text-gray-900 dark:text-white">Full Name</label>
+  <input type="text" name="name" required
+    class="w-full p-2 border rounded mb-4 bg-white text-gray-900 dark:bg-gray-700 dark:text-white border-gray-300 dark:border-gray-600" />
 
-  <label class="block mb-2">Email</label>
-  <input type="email" name="email" required class="w-full p-2 border rounded mb-4 bg-white text-gray-900 dark:bg-gray-700 dark:text-white border-gray-300 dark:border-gray-600" />
+  <label class="block mb-2 text-gray-900 dark:text-white">Email</label>
+  <input type="email" name="email" required
+    class="w-full p-2 border rounded mb-4 bg-white text-gray-900 dark:bg-gray-700 dark:text-white border-gray-300 dark:border-gray-600" />
 
-  <label class="block mb-2">Phone</label>
-  <input type="tel" name="phone" required class="w-full p-2 border rounded mb-4 bg-white text-gray-900 dark:bg-gray-700 dark:text-white border-gray-300 dark:border-gray-600" />
+  <label class="block mb-2 text-gray-900 dark:text-white">Phone</label>
+  <input type="tel" name="phone" required
+    class="w-full p-2 border rounded mb-4 bg-white text-gray-900 dark:bg-gray-700 dark:text-white border-gray-300 dark:border-gray-600" />
 
-  <label class="block mb-2">Date of Birth</label>
-  <input type="date" name="dob" required class="w-full p-2 border rounded mb-4 bg-white text-gray-900 dark:bg-gray-700 dark:text-white border-gray-300 dark:border-gray-600" />
+  <label class="block mb-2 text-gray-900 dark:text-white">Date of Birth</label>
+  <input type="date" name="dob" required
+    class="w-full p-2 border rounded mb-4 bg-white text-gray-900 dark:bg-gray-700 dark:text-white border-gray-300 dark:border-gray-600" />
 
-  <label class="block mb-2">Reason to Join</label>
-  <textarea name="message" rows="4" required class="w-full p-2 border rounded mb-4 bg-white text-gray-900 dark:bg-gray-700 dark:text-white border-gray-300 dark:border-gray-600"></textarea>
+  <label class="block mb-2 text-gray-900 dark:text-white">Reason to Join</label>
+  <textarea name="message" rows="4" required
+    class="w-full p-2 border rounded mb-4 bg-white text-gray-900 dark:bg-gray-700 dark:text-white border-gray-300 dark:border-gray-600"></textarea>
 
-  <label class="block mb-2">Are you saved?</label>
+  <label class="block mb-2 text-gray-900 dark:text-white">Are you saved?</label>
   <div class="flex gap-4 mb-4">
-
-    <label><input class="dark:text-white" type="radio" name="saved" value="Yes" required /> Yes</label>
-    <label><input class="dark:text-white" type="radio" name="saved" value="No" required /> No</label>
+    <label class="dark:text-white"><input type="radio" name="saved" value="Yes" required /> Yes</label>
+    <label class="dark:text-white"><input type="radio" name="saved" value="No" required /> No</label>
   </div>
 
-  <label class="block mb-2">Have you been baptized?</label>
+  <label class="block mb-2 text-gray-900 dark:text-white">Have you been baptized?</label>
   <div class="flex gap-4 mb-4">
-    <label><input class="dark:text-white" type="radio" name="baptized" value="Yes" required /> Yes</label>
-    <label><input class="dark:text-white" type="radio" name="baptized" value="No" required /> No</label>
+    <label class="dark:text-white"><input type="radio" name="baptized" value="Yes" required /> Yes</label>
+    <label class="dark:text-white"><input type="radio" name="baptized" value="No" required /> No</label>
   </div>
 
-  <label class="block mb-2">Have you been confirmed?</label>
+  <label class="block mb-2 text-gray-900 dark:text-white">Have you been confirmed?</label>
   <div class="flex gap-4 mb-4">
-    <label><input class="dark:text-white" type="radio" name="confirmed" value="Yes" required /> Yes</label>
-    <label><input class="dark:text-white" type="radio" name="confirmed" value="No" required /> No</label>
+    <label class="dark:text-white"><input type="radio" name="confirmed" value="Yes" required /> Yes</label>
+    <label class="dark:text-white"><input type="radio" name="confirmed" value="No" required /> No</label>
   </div>
 
-  <label class="block mb-2">Preferred Ministry</label>
-  <select name="ministry" class="w-full p-2 border rounded mb-6 bg-white text-gray-900 dark:bg-gray-700 dark:text-white border-gray-300 dark:border-gray-600">
+  <label class="block mb-2 text-gray-900 dark:text-white">Preferred Ministry</label>
+  <select name="ministry"
+    class="w-full p-2 border rounded mb-6 bg-white text-gray-900 dark:bg-gray-700 dark:text-white border-gray-300 dark:border-gray-600">
     <option value="Children and Teens">Children and Teens</option>
     <option value="Youth">Youth</option>
     <option value="Choir and Worship Team">Choir and Worship Team</option>
@@ -310,11 +314,11 @@
     <option value="Other">Other</option>
   </select>
 
-  <button type="submit" class="bg-red-700 hover:bg-red-800 text-white font-semibold py-2 px-6 rounded-lg w-full transition">
+  <button type="submit"
+    class="bg-red-700 hover:bg-red-800 text-white font-semibold py-2 px-6 rounded-lg w-full transition">
     Submit
   </button>
 </form>
-
 
 
 
