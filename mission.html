@@ -249,8 +249,8 @@
   }
 </script>
  <!-- Hero Section -->
-<section class="relative bg-cover bg-center h-[60vh] flex items-center justify-center text-white" style="background-image: url('Images/mission.jpg');">
-  <!-- Black overlay covers the full section -->
+<section class="relative bg-cover bg-center h-[60vh] flex items-center justify-center text-white transition-transform duration-500 hover:scale-105" style="background-image: url('Images/mission.jpg');">
+  <!-- Black overlay -->
   <div class="absolute inset-0 bg-black/60"></div>
 
   <!-- Content stays on top -->
@@ -259,6 +259,7 @@
     <p class="mt-4 text-lg">Sharing Christ's Love Through Action</p>
   </div>
 </section>
+
 
 
   <!-- Mission Statement -->
@@ -274,23 +275,18 @@
   </section>
 
   <!-- Director of Missions Section -->
-<section class="bg-white py-16 dark:bg-gray-900" data-aos="fade-up">
-  <div class="container mx-auto px-4 dark:bg-gray-900">
-    <h2 class="text-3xl font-bold text-center text-gray-800 mb-10">Director of Missions</h2>
-
-    <div class="flex flex-col md:flex-row items-center justify-center gap-8">
-      <!-- Card -->
-      <div class="bg-gray-100 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 relative max-w-md dark:bg-gray-900">
-        <img src="Images/dawo.jpeg" alt="Director of Missions" class="w-full h-72 object-cover" />
-        <div class="p-6 text-center">
-          <h3 class="text-xl font-semibold text-gray-800">Eng. George Dawo</h3>
-          <p class="text-gray-600">Director of Missions</p>
-          <button onclick="document.getElementById('directorModal').classList.remove('hidden')" class="mt-4 px-4 py-2 bg-red-900 hover:bg-red-900 text-white rounded">Read More</button>
-        </div>
-      </div>
+<div class="flex flex-col md:flex-row items-center justify-center gap-8">
+  <!-- Card -->
+  <div class="bg-gray-100 rounded-lg overflow-hidden shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-transform duration-500 relative max-w-md dark:bg-gray-900" data-aos="fade-up">
+    <img src="Images/dawo.jpeg" alt="Director of Missions" class="w-full h-72 object-cover transition-transform duration-500 hover:scale-105" />
+    <div class="p-6 text-center">
+      <h3 class="text-xl font-semibold text-gray-800">Eng. George Dawo</h3>
+      <p class="text-gray-600">Director of Missions</p>
+      <button onclick="document.getElementById('directorModal').classList.remove('hidden')" class="mt-4 px-4 py-2 bg-red-900 hover:bg-red-700 text-white rounded transition-colors duration-300">Read More</button>
     </div>
   </div>
-</section>
+</div>
+
 
 <!-- Modal -->
 <div id="directorModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
