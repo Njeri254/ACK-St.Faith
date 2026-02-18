@@ -306,42 +306,71 @@
 </section>
 
 <!-- ST. FAITH’S HISTORY -->
+
+      <!-- INTERACTIVE HISTORY TIMELINE -->
 <section class="py-20 bg-gray-100 dark:bg-gray-800">
-  <div class="max-w-4xl mx-auto px-6">
-    <h2 class="text-3xl font-bold text-red-800 mb-6 text-center">St. Faith’s Parish History (1983 - 2023)</h2>
-    
-    <!-- Accordion Item -->
-    <div class="border-b border-gray-300 dark:border-gray-700">
-      <button onclick="toggleAccordion('history1')" class="w-full text-left py-4 font-semibold text-lg flex justify-between items-center">
-        Origins (1983)
-        <span>+</span>
-      </button>
-      <div id="history1" class="hidden py-2 text-gray-700 dark:text-gray-300">
-        First services held at temporary location; Rev. Manasseh Ngugi appointed first Vicar.
-      </div>
-    </div>
+  <div class="max-w-6xl mx-auto px-6">
+    <h2 class="text-3xl font-bold text-red-800 mb-12 text-center">
+      St. Faith’s Parish History (1983 - 2023)
+    </h2>
 
-    <div class="border-b border-gray-300 dark:border-gray-700">
-      <button onclick="toggleAccordion('history2')" class="w-full text-left py-4 font-semibold text-lg flex justify-between items-center">
-        Permanent Building (1999)
-        <span>+</span>
-      </button>
-      <div id="history2" class="hidden py-2 text-gray-700 dark:text-gray-300">
-        Permanent church building consecrated by Archbishop Manasses Kuria.
-      </div>
-    </div>
+    <div class="space-y-6">
 
-    <div class="border-b border-gray-300 dark:border-gray-700">
-      <button onclick="toggleAccordion('history3')" class="w-full text-left py-4 font-semibold text-lg flex justify-between items-center">
-        40-Year Celebration (2023)
-        <span>+</span>
-      </button>
-      <div id="history3" class="hidden py-2 text-gray-700 dark:text-gray-300">
-        Celebrating 40 years of growth, ministry, and community impact.
+      <!-- Timeline Item 1 -->
+      <div class="bg-white dark:bg-gray-900 rounded-lg shadow overflow-hidden">
+        <button class="w-full flex justify-between items-center px-6 py-4 font-bold text-red-800 dark:text-red-400 focus:outline-none hover:bg-gray-100 dark:hover:bg-gray-800"
+                onclick="this.nextElementSibling.classList.toggle('hidden'); this.querySelector('svg').classList.toggle('rotate-180');">
+          <span>1983 - Origins</span>
+          <svg class="w-5 h-5 transition-transform duration-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
+        <div class="px-6 py-4 hidden">
+          <p class="text-gray-700 dark:text-gray-300 mb-4">
+            First services held at temporary locations in homes. Rev. Manasseh Ngugi appointed first Vicar.
+          </p>
+          <img src="Images/history1.jpg" alt="Origins" class="rounded-lg shadow-lg w-full md:w-3/4">
+        </div>
       </div>
+
+      <!-- Timeline Item 2 -->
+      <div class="bg-white dark:bg-gray-900 rounded-lg shadow overflow-hidden">
+        <button class="w-full flex justify-between items-center px-6 py-4 font-bold text-red-800 dark:text-red-400 focus:outline-none hover:bg-gray-100 dark:hover:bg-gray-800"
+                onclick="this.nextElementSibling.classList.toggle('hidden'); this.querySelector('svg').classList.toggle('rotate-180');">
+          <span>1999 - Permanent Building</span>
+          <svg class="w-5 h-5 transition-transform duration-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
+        <div class="px-6 py-4 hidden">
+          <p class="text-gray-700 dark:text-gray-300 mb-4">
+            Permanent church building consecrated by Archbishop Manasses Kuria. Parish begins expanding ministries.
+          </p>
+          <img src="Images/history2.jpg" alt="Permanent Building" class="rounded-lg shadow-lg w-full md:w-3/4">
+        </div>
+      </div>
+
+      <!-- Timeline Item 3 -->
+      <div class="bg-white dark:bg-gray-900 rounded-lg shadow overflow-hidden">
+        <button class="w-full flex justify-between items-center px-6 py-4 font-bold text-red-800 dark:text-red-400 focus:outline-none hover:bg-gray-100 dark:hover:bg-gray-800"
+                onclick="this.nextElementSibling.classList.toggle('hidden'); this.querySelector('svg').classList.toggle('rotate-180');">
+          <span>2023 - 40-Year Celebration</span>
+          <svg class="w-5 h-5 transition-transform duration-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
+        <div class="px-6 py-4 hidden">
+          <p class="text-gray-700 dark:text-gray-300 mb-4">
+            Celebrating 40 years of growth, ministry, and community impact. The parish now serves over 800 members.
+          </p>
+          <img src="Images/history3.jpg" alt="40-Year Celebration" class="rounded-lg shadow-lg w-full md:w-3/4">
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
+
 <!-- CALL TO ACTION -->
 <section class="py-20 bg-red-800 text-white text-center">
   <div class="max-w-4xl mx-auto px-6" data-aos="zoom-in">
